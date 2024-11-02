@@ -149,6 +149,27 @@ app.get("/api/getjson", (req, res) => {
   console.log("Got hit");
   res.json(LoginJosndata);
 });
+app.get("/api/gettopjobs",(req,res)=>{
+  axios({
+    method: "get",
+    url: `${instanceUrl}/services/apexrest/GetTopJobs/`,
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      console.log("get jobs");
+      console.log("Response:", response.data);
+      res.json(response.data);
+    })
+    .catch((error) => {
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+    });
+})
 app.get("/api/getjobdetails", (req, res) => {
   console.log("Got hit jobdetails");
   res.json(JobDetails);
