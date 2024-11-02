@@ -1,0 +1,376 @@
+body {
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+.search-container {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+width: 75vh;
+padding: 10px;
+margin: 2.5em;
+border: 1px solid #ddd;
+border-radius: 8px;
+background-color: #fff;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input, .location-input {
+display: flex;
+align-items: center;
+padding: 10px;
+
+
+flex-grow: 1;
+
+}
+
+.search-input {
+margin-right: 5px;
+}
+
+.location-input {
+margin-left: 5px;
+}
+
+.search-icon, .location-icon {
+margin-right: 10px;
+font-size: 16px;
+}
+
+input {
+border: none;
+outline: none;
+width: 100%;
+background-color: transparent;
+font-size: 14px;
+}
+
+.search-btn {
+background-color: #93cfcf;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+font-size: 14px;
+border-color: #93cfcf;
+border: 1px solid;
+transition: background-color 1s ease, color 1s ease;
+}
+
+.search-btn:hover {
+background-color: white;
+  color: #93cfcf;
+  border-color: #93cfcf;
+  border: 1px solid;
+}
+
+
+/* Container for the search box */
+#jobSearchInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  margin: 1rem;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* On focus, give a more prominent border */
+#jobSearchInput:focus {
+  border-color: #93cfcf;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Ensure the input is responsive */
+@media (max-width: 768px) {
+  #jobSearchInput {
+    width: 100%;
+  }
+}
+
+/* Container for job cards */
+#positionsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: space-between;
+}
+
+/* Job card styling */
+.job-card {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Ensure all cards have the same minimum height */
+.job-card {
+  min-height: 350px; /* Adjust based on your content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Company logo styling */
+.company-logo {
+  max-width: 100px;
+  max-height: 100px;
+  margin-bottom: 15px;
+}
+
+/* Ensure job titles are not too long */
+.job-card h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Job details */
+.job-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+/* View More Details button */
+.job-details-btn {
+  background-color: #93cfcf;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: auto;
+  transition: background-color 1s ease, color 1s ease;
+}
+
+.job-details-btn:hover {
+  background-color: white;
+  color: #93cfcf;
+  border-color: #93cfcf;
+  border: 1px solid;
+}
+
+/* For responsive design */
+@media (max-width: 768px) {
+  #positionsContainer {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  #positionsContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Loading spinner */
+#loadingSpinner {
+  text-align: center;
+  font-size: 18px;
+  margin: 20px;
+  color: #333;
+}
+
+
+footer {
+  background-color: #007bff;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto;
+}
+.nextbutton{
+background-color: #93cfcf;
+color:white;
+border-radius: 5px;
+margin-left: 1rem;
+padding:0.5rem 2rem 0.5rem 2rem;
+border-color: #93cfcf;
+}
+.nextbutton:hover{
+transform: scale(5px);
+background-color: white;
+  color: #93cfcf;
+  border-color: #93cfcf;
+  border: 1px solid;
+}
+#paginationControls{
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 1rem;
+}
+.header-content {
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+background-color: #fff;
+border-bottom: 2px solid #93cfcf;
+}
+
+.logo {
+    width: 120px; /* Increase the width to make the logo slightly larger */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0px 2em;
+}
+
+
+nav.nav-links {
+display: flex;
+gap: 15px;
+}
+
+nav.nav-links button {
+background-color: #93cfcf;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 4px;
+font-size: 1rem;
+transition: background-color 0.3s;
+margin: 0px 2em;
+}
+
+nav.nav-links button:hover {
+background-color: white;
+color: #93cfcf;
+border-color: #93cfcf;
+border: 1px solid;
+}
+.header-content a{
+text-decoration: none;
+color: white;
+}
+
+footer {
+  margin-top: 0; /* Ensure no top margin */
+  padding: 40px 20px;
+  background-color: #fff; /* Background color for footer */
+  border-top: 1px solid #ccc; /* Optional border for separation */
+}
+
+.footer-content {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space sections evenly */
+  align-items: flex-start; /* Align items to the top */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  max-width: 1200px; /* Optional: limit the width of the footer */
+  margin: 0 auto; /* Center the footer content */
+}
+
+.footer-content > div {
+  flex: 1; /* Allow equal growth */
+  margin-right: 20px; /* Space between sections */
+}
+
+.footer-content > div:last-child {
+  margin-right: 0; /* Remove margin from the last section */
+}
+
+.footer-content h2 {
+  font-size: 1.5rem; /* Font size for headings */
+  color: #343a40; /* Dark text color */
+  margin: 10px 0; /* Margin for spacing */
+}
+
+.footer-nav,
+.social-nav {
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+  gap: 8px; /* Space between links */
+}
+
+.footer-nav a,
+.social-nav a {
+  color: #93cfcf; /* Color for footer links */
+  text-decoration: none; /* Remove underline */
+  font-size: 1rem; /* Font size for links */
+}
+
+.footer-nav a:hover,
+.social-nav a:hover {
+  text-decoration: underline; /* Underline on hover */
+  color: darkblue; /* Change color on hover */
+}
+
+.resume-section,
+.job-recruiting-section {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  margin-bottom: 20px; /* Space between sections */
+}
+
+.resume-section a,
+.job-recruiting-section a {
+  margin-top: 10px; /* Space between links */
+  color: #93cfcf; /* Link color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s; /* Transition effect */
+}
+
+.resume-section a:hover,
+.job-recruiting-section a:hover {
+  color: darkblue; /* Change color on hover */
+}
+
+
+/* Optional: Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column; /* Stack sections vertically on small screens */
+  }
+
+  .footer-content > div {
+      margin-right: 0; /* Remove margin for stacked sections */
+      margin-bottom: 20px; /* Add space below each section */
+  }
+  
+}
+.social-media-section {
+  display: flex;
+  flex-direction: column; /* Stack the heading and icons */
+  align-items: flex-start; /* Align to the start */
+}
+
+.social-icons {
+  display: flex; /* Display icons inline */
+  gap: 10px; /* Space between icons */
+}
+
+.social-icons a {
+  color: #93cfcf; /* Icon color */
+  font-size: 1.5rem; /* Size of the icons */
+  transition: color 0.3s; /* Transition effect */
+}
+
+.social-icons a:hover {
+  color: darkblue; /* Change color on hover */
+}

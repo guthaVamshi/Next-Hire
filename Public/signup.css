@@ -1,0 +1,324 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5; /* Neutral background color */
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #93cfcf;
+}
+
+.logo {
+        width: 120px; /* Increase the width to make the logo slightly larger */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+
+nav.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+nav.nav-links button {
+    background-color: #93cfcf;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+nav.nav-links button:hover {
+    background-color: #7bbaba;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+}
+
+.signup-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 900vh; /* Limit the width for a better layout */
+}
+
+/* Form Styles */
+.signup-form {
+    padding: 40px;
+    width: 50%; /* Adjust for equal width with the image container */
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] ,
+input[type="tel"]{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+.error-message {
+    display: none;
+    color: red;
+    font-size: 0.9rem;
+}
+
+button[type="submit"] {
+    background-color: #93cfcf;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #7bbaba;
+}
+
+.existing-account {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.back-home {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.back-home:hover {
+    background-color: #218838;
+}
+
+/* Image Container */
+.image-container {
+    width: 50%; /* Keep this to maintain the layout */
+    padding: 20px; /* Optional padding */
+    display: flex; /* Use flex to center the image */
+    align-items: center; /* Center the image vertically */
+}
+
+.image-container img {
+    max-width: 100%; /* Ensure the image does not exceed its container width */
+    height: 400px; /* Set a fixed height to increase vertical size */
+    object-fit: cover; /* Maintain aspect ratio while covering the height */
+    border-radius: 8px; /* Round corners */
+}
+
+footer {
+    margin-top: 0; /* Ensure no top margin */
+    padding: 40px 20px;
+    background-color: #fff; /* Background color for footer */
+    border-top: 1px solid #ccc; /* Optional border for separation */
+}
+
+.footer-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space sections evenly */
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    max-width: 1200px; /* Optional: limit the width of the footer */
+    margin: 0 auto; /* Center the footer content */
+}
+
+.footer-content > div {
+    flex: 1; /* Allow equal growth */
+    margin-right: 20px; /* Space between sections */
+}
+
+.footer-content > div:last-child {
+    margin-right: 0; /* Remove margin from the last section */
+}
+
+.footer-content h2 {
+    font-size: 1.5rem; /* Font size for headings */
+    color: #343a40; /* Dark text color */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+.footer-nav,
+.social-nav {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    gap: 8px; /* Space between links */
+}
+
+.footer-nav a,
+.social-nav a {
+    color: #93cfcf; /* Color for footer links */
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem; /* Font size for links */
+}
+
+.footer-nav a:hover,
+.social-nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: darkblue; /* Change color on hover */
+}
+
+.resume-section,
+.job-recruiting-section {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    margin-bottom: 20px; /* Space between sections */
+}
+
+.resume-section a,
+.job-recruiting-section a {
+    margin-top: 10px; /* Space between links */
+    color: #93cfcf; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Transition effect */
+}
+
+.resume-section a:hover,
+.job-recruiting-section a:hover {
+    color: darkblue; /* Change color on hover */
+}
+
+
+/* Optional: Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack sections vertically on small screens */
+    }
+
+    .footer-content > div {
+        margin-right: 0; /* Remove margin for stacked sections */
+        margin-bottom: 20px; /* Add space below each section */
+    }
+    
+}
+.social-media-section {
+    display: flex;
+    flex-direction: column; /* Stack the heading and icons */
+    align-items: flex-start; /* Align to the start */
+}
+
+.social-icons {
+    display: flex; /* Display icons inline */
+    gap: 10px; /* Space between icons */
+}
+
+.social-icons a {
+    color: #93cfcf; /* Icon color */
+    font-size: 1.5rem; /* Size of the icons */
+    transition: color 0.3s; /* Transition effect */
+}
+
+.social-icons a:hover {
+    color: darkblue; /* Change color on hover */
+}
+
+/* Header Styles */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Added padding for better spacing */
+    background-color: #fff;
+    border-bottom: 2px solid #93cfcf;
+}
+
+.logo {
+    width: 100px; /* Adjusted size of the logo */
+}
+
+nav.nav-links {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    margin-left: auto; /* Push nav buttons to the right */
+}
+
+nav.nav-links button {
+    background-color: #93cfcf;
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Adjusted padding for a better look */
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+nav.nav-links button:hover {
+    background-color: #7bbaba;
+}
+
+#signupSuccessModal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+}

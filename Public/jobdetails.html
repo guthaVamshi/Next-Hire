@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="jobdetails.css">
+</head>
+<body>
+  <div class="header-content">
+    <a href="Home.html">
+    <img src="images/next-hire.png" alt="Next Hire Logo" class="logo"></a>
+    <nav class="nav-links">
+        <button id="goToSignIn"><a href="Home.html">Home</a></button>
+    </nav>
+</div>
+    <div class="job-details-container">
+        <div class="company-logo">
+            
+        </div>
+        <div class="job-header">
+            <h1></h1>
+            <p class="location"></p>
+            <p class="status"></p>
+        </div>
+        <div class="job-info">
+            <!-- Job Info will be populated here -->
+        </div>
+        <div class="skills">
+            <h3>Job Description:</h3>
+            <ul class="Job-Description">
+                
+
+            </ul>
+            <h3>Required Skills:</h3>
+            <ul class="job-specificSkills">
+                
+            </ul>
+            <h4>Company basic requirements</h4>
+            <ul class="required-skills">
+                <!-- Required Skills will be populated here -->
+            </ul>
+            <h3>Optional Skills:</h3>
+            <ul class="optional-skills">
+                <!-- Optional Skills will be populated here -->
+            </ul>
+            <div class=" d-flex justify-content-center align-items-center">
+                <button type="button" class="btn ApplyButton" data-toggle="modal" data-target="#exampleModalCenter">Apply For This Position</button>
+            </div>
+            <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Apply For this Position</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                       
+                        <div class="container">
+                            <form id="uploadForm">
+                              <div id="questionForm"></div>
+                          
+                              <!-- Custom File Input for Resume -->
+                              <div class="file-input-wrapper" id="resumeWrapper">
+                                <label for="fileInput" class="custom-file-label">
+                                  <i class="fa-solid fa-file-import fa-2xl"></i>
+                                  <span class="file-label-text">Upload Resume</span>
+                                </label>
+                                <input type="file" id="fileInput" name="resume" accept=".pdf,.doc,.docx" required>
+                              </div>
+                          
+                              <!-- Custom File Input for Cover Letter -->
+                              <div class="file-input-wrapper" id="coverWrapper">
+                                <label for="coverLetter" class="custom-file-label">
+                                  <i class="fa-solid fa-file-import fa-2xl"></i>
+                                  <span class="file-label-text">Upload Cover Letter</span>
+                                </label>
+                                <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx" required>
+                              </div>
+                          
+                              <button type="submit">Upload</button>
+                            </form>
+                          </div>
+                          
+                          
+                          
+                          
+                    </div>
+                    <!--
+                    <div class="modal-footer">
+                      
+                    </div>
+                  -->
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+    </div>
+       
+<footer>
+  <div class="footer-content">
+      <div class="info-section">
+          <h2>Company Information</h2>
+          <nav class="footer-nav">
+              <a href="termsandconditions.html">Terms and Conditions</a>
+              <a href="aboutus.html">About Us</a>
+              <a href="accessibility.html">Accessibility</a>
+              <a href="copyright.html">Copyright</a>
+              <a href="user.html">User Agreement Policy</a>
+              <a href="privacy.html">Privacy Policy</a>
+          </nav>
+      </div>
+      <div class="resume-section">
+          <h2>Create Your Resume</h2>
+          <a href="https://r.search.yahoo.com/rdclks/dWU9Nzd0NWhxMWppMDQ4ZiZ1dD0xNzMwMTU0NzY3NzM4JnVvPTczNDYxMzY2NDU2NTEwJmx0PTImcz0xJmVzPWJ2ek5pMG9hY3htaFl4TWVHU2pCYlljQ2Y5N0ZackNTd0VaMjEuWVRMdm5aNERuYUV3Lk1lZlNaOGZKQjZpWUtFbHl5aTNXY3ZqYUd6M1pEOUEtLQ--/RV=2/RE=1732746768/RO=14/RU=https%3a%2f%2fwww.bing.com%2faclick%3fld%3de8YtXahMJPd1A3sSAueCK3dTVUCUxtl1stTxC39DkD8rGBhcnYkfaI_EO4_pRiLo4El5s4dBj7Vi3rM0CUVTaI32SR1HOXl0pil-CCI31C2tWp9y2mEyZlJN6kkHtXsQWwpsLbpzktviuGj31-u1W_k55gHmEnSrsggpClrOtYy2wg1ja96cYEZ-209dbFPtAjIs6_Fg%26u%3daHR0cHMlM2ElMmYlMmZ3d3cucmVzdW1lLW5vdy5jb20lMmZscCUyZnJuYXJzbXNtMTEwLmFzcHglM2Z1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RzZW0lMjZ1dG1fY2FtcGFpZ24lM2Q1MTY0NjgzMSUyNnV0bV90ZXJtJTNkcmVzdW1lJTI1MjBidWlsZGVyJTI2bmV0d29yayUzZG8lMjZkZXZpY2UlM2RjJTI2YWRwb3NpdGlvbiUzZCUyNmFkZ3JvdXBpZCUzZDEyMzI0NzAxNzklMjZtc2Nsa2lkJTNkNDQwYmVlZTZhYjFmMTBiZWY1OWM4OWM2YmEwZjk2OGYlMjZ1dG1fY29udGVudCUzZHJlc3VtZSUyNTIwYnVpbGRlciUyNTIwKGhlYWQp%26rlid%3d440beee6ab1f10bef59c89c6ba0f968f/RK=2/RS=B.B1aiNCglrRu.Tp55dhE6DHuzo-;_ylt=AwrhchwPESBnNLw8hBcPxQt.;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA292LXRvcA--;_ylc=X3IDMgRydAMw?IG=0ae1721c752146218200000000f601b0">Resume Builder</a>
+          <a href="https://www.jobscan.co/resume-score">Check Your Resume ATS</a>
+        </div>
+      <div class="job-recruiting-section">
+          <h2>Learn More About Job Recruiting</h2>
+          <a href="https://www.forbes.com/advisor/business/recruitment-strategies/">Job Recruiting Tips</a>
+          <a href="https://www.coursera.org//">Ehance Your Skillset</a>
+      </div>
+      <div class="social-media-section">
+          <h2>Follow Us on Social Media</h2>
+          <div class="social-icons">
+              <a href="https://www.facebook.com/signin" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/login" target="_blank">
+                  <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.instagram.com/accounts/login/" target="_blank">
+                  <i class="fab fa-instagram"></i>
+              </a>
+          </div>
+      </div>
+  </div>
+</footer>
+    <script src="jobdetails.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

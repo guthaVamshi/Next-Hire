@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card img {
+    width: 50%; /* Adjust the width as needed */
+    height: auto; /* Keep aspect ratio */
+    object-fit: cover; /* Cover the area */
+    margin: auto; /* Center the image */
+   
+
+}
+#Companyimage { 
+    width: 50%;
+    display: flex; /* Centering effect */
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+}

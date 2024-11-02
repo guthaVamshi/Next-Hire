@@ -1,0 +1,417 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa; /* Light background */
+    color: #343a40; /* Dark text color */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: flex-end; /* Align items to the left */
+    align-items: flex-end;
+}
+
+/* Categories Section */
+.categories {
+    flex: 1;
+    max-width: 45%;
+    padding-right: 20px;
+}
+
+.categories h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.categories ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.categories ul li {
+    margin: 8px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+/* Styles for heading and paragraph text */
+.description-item h3 {
+    font-weight: bold; /* Bold headings */
+}
+
+.description-item p {
+    background-color: #f0f0f0; /* Highlight text background */
+    padding: 5px; /* Add some padding */
+    margin-bottom: 20px; /* Increase space below paragraphs */
+}
+
+/* Increase space between images and paragraphs */
+.description-item img {
+    margin-bottom: 15px; /* Space below images */
+}
+
+
+/* Image Container */
+.image-container {
+    flex: 1;
+    max-width: 50%; /* Set max width for the image container */
+    padding-right: 20px; /* Add space between the image and text */
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Header Styles */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 2px solid #93cfcf;
+}
+
+.logo {
+    width: 120px; /* Increase the width to make the logo slightly larger */
+    height: auto; /* Maintain aspect ratio */
+}
+
+nav.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+nav.nav-links button {
+    background-color: #93cfcf;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+nav.nav-links button:hover {
+    background-color: #7bbaba;
+}
+
+/* App Info Section */
+.app-info {
+    display: flex; /* Enable flexbox layout */
+    align-items: center; /* Align items vertically in the center */
+    padding: 20px;
+    background-color: #93cfcf; /* Background color */
+}
+
+.app-info img {
+    max-width: 70%; /* Increase the size of the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between image and text */
+    margin-left: 20px; /* Space from the left edge */
+}
+
+.app-info-text {
+    text-align: left; /* Align text to the left */
+}
+
+.app-info-text h2 {
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0; /* Remove default margin */
+}
+
+.app-info-text p {
+    color: white;
+    margin-top: 10px; /* Add some space between heading and paragraph */
+    margin-bottom: 10px; /* Reduced space below the paragraph */
+}
+
+.small-images {
+    display: flex; /* Use flexbox for small images */
+    justify-content: flex-start; /* Align images to the left */
+    gap: 5px; /* Reduced space between the images */
+}
+
+.small-image {
+    width: 70px; /* Increased width for small images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional: rounded corners for small images */
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 0; /* Ensure no top margin */
+    padding: 40px 20px;
+    background-color: #fff; /* Background color for footer */
+    border-top: 1px solid #ccc; /* Optional border for separation */
+}
+
+.footer-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space sections evenly */
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    max-width: 1200px; /* Optional: limit the width of the footer */
+    margin: 0 auto; /* Center the footer content */
+}
+
+.footer-content > div {
+    flex: 1; /* Allow equal growth */
+    margin-right: 20px; /* Space between sections */
+}
+
+.footer-content > div:last-child {
+    margin-right: 0; /* Remove margin from the last section */
+}
+
+.footer-content h2 {
+    font-size: 1.5rem; /* Font size for headings */
+    color: #343a40; /* Dark text color */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+.footer-nav,
+.social-nav {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    gap: 8px; /* Space between links */
+}
+
+.footer-nav a,
+.social-nav a {
+    color: #93cfcf; /* Color for footer links */
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem; /* Font size for links */
+}
+
+.footer-nav a:hover,
+.social-nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: darkblue; /* Change color on hover */
+}
+
+.resume-section,
+.job-recruiting-section {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    margin-bottom: 20px; /* Space between sections */
+}
+
+.resume-section a,
+.job-recruiting-section a {
+    margin-top: 10px; /* Space between links */
+    color: #93cfcf; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Transition effect */
+}
+
+.resume-section a:hover,
+.job-recruiting-section a:hover {
+    color: darkblue; /* Change color on hover */
+}
+
+
+/* Optional: Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack sections vertically on small screens */
+    }
+
+    .footer-content > div {
+        margin-right: 0; /* Remove margin for stacked sections */
+        margin-bottom: 20px; /* Add space below each section */
+    }
+    
+}
+.social-media-section {
+    display: flex;
+    flex-direction: column; /* Stack the heading and icons */
+    align-items: flex-start; /* Align to the start */
+}
+
+.social-icons {
+    display: flex; /* Display icons inline */
+    gap: 10px; /* Space between icons */
+}
+
+.social-icons a {
+    color: #93cfcf; /* Icon color */
+    font-size: 1.5rem; /* Size of the icons */
+    transition: color 0.3s; /* Transition effect */
+}
+
+.social-icons a:hover {
+    color: darkblue; /* Change color on hover */
+}
+
+/* Terms Section */
+.terms-content {
+    margin-top: 40px;
+}
+
+.terms-content h2 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+}
+
+.terms-content p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+.back-home-btn {
+    display: inline-block; /* Makes the anchor behave like a button */
+    padding: 10px 20px; /* Adds padding for better appearance */
+    background-color: #93cfcf; /* Background color */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    
+}
+
+
+
+/* Descriptions Section Styles */
+.descriptions {
+    margin: 40px 0;
+}
+
+.description-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.description-item {
+    flex: 1 1 calc(20% - 20px);
+    margin: 10px;
+    text-align: center;
+}
+
+.description-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 10px 0 5px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.error-message {
+    display: none;
+    color: red;
+    font-size: 0.9rem;
+}
+
+button[type="submit"] {
+    background-color: #93cfcf;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #7bbaba;
+}
+
+/* Video Section */
+.video-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.video-section .content {
+    width: 50%;
+    padding-right: 20px;
+}
+
+.video-section .video-container {
+    width: 50%;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Link Styles */
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: darkblue;
+}
+
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Optional: adjust stacking order */
+    background-color: white; /* Optional: add background color */
+  }

@@ -1,0 +1,201 @@
+button a{
+    text-decoration: none;
+}
+.herosection{
+    background-image: url(Images/herosection.jpg);
+    background-repeat: no-repeat;
+   
+    background-size: cover;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    background-color: #fff;
+    border-bottom: 2px solid #93cfcf;
+  }
+  
+  .logo {
+        width: 120px; /* Increase the width to make the logo slightly larger */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0px 2em;
+    }
+    
+  
+  nav.nav-links {
+    display: flex;
+    gap: 15px;
+    color: white;
+  }
+  
+  nav.nav-links button {
+    background-color: #93cfcf;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 1s;
+    
+  }
+  
+  nav.nav-links button:hover {
+    background-color: white;
+    color: #93cfcf !important;
+    border-color: #93cfcf;
+    border: 1px solid;
+  }
+  .header-content a{
+    text-decoration: none;
+    color: black;
+  }
+  footer {
+    margin-top: 0; /* Ensure no top margin */
+    padding: 40px 20px;
+    background-color: #fff; /* Background color for footer */
+    border-top: 1px solid #ccc; /* Optional border for separation */
+  }
+  
+  .footer-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space sections evenly */
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    max-width: 1200px; /* Optional: limit the width of the footer */
+    margin: 0 auto; /* Center the footer content */
+  }
+  
+  .footer-content > div {
+    flex: 1; /* Allow equal growth */
+    margin-right: 20px; /* Space between sections */
+  }
+  
+  .footer-content > div:last-child {
+    margin-right: 0; /* Remove margin from the last section */
+  }
+  
+  .footer-content h2 {
+    font-size: 1.5rem; /* Font size for headings */
+    color: #343a40; /* Dark text color */
+    margin: 10px 0; /* Margin for spacing */
+  }
+  
+  .footer-nav,
+  .social-nav {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    gap: 8px; /* Space between links */
+  }
+  
+  .footer-nav a,
+  .social-nav a {
+    color: #93cfcf; /* Color for footer links */
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem; /* Font size for links */
+  }
+  
+  .footer-nav a:hover,
+  .social-nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: darkblue; /* Change color on hover */
+  }
+  
+  .resume-section,
+  .job-recruiting-section {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    margin-bottom: 20px; /* Space between sections */
+  }
+  
+  .resume-section a,
+  .job-recruiting-section a {
+    margin-top: 10px; /* Space between links */
+    color: #93cfcf; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Transition effect */
+  }
+  
+  .resume-section a:hover,
+  .job-recruiting-section a:hover {
+    color: darkblue; /* Change color on hover */
+  }
+  
+  
+  /* Optional: Responsive adjustments */
+  @media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack sections vertically on small screens */
+    }
+  
+    .footer-content > div {
+        margin-right: 0; /* Remove margin for stacked sections */
+        margin-bottom: 20px; /* Add space below each section */
+    }
+    
+  }
+  .social-media-section {
+    display: flex;
+    flex-direction: column; /* Stack the heading and icons */
+    align-items: flex-start; /* Align to the start */
+  }
+  
+  .social-icons {
+    display: flex; /* Display icons inline */
+    gap: 10px; /* Space between icons */
+  }
+  
+  .social-icons a {
+    color: #93cfcf; /* Icon color */
+    font-size: 1.5rem; /* Size of the icons */
+    transition: color 0.3s; /* Transition effect */
+  }
+  
+  .social-icons a:hover {
+    color: darkblue; /* Change color on hover */
+  }
+
+  /* corousel indicator*/
+
+  .carousel-indicators button{
+    background-color: #41efef !important;
+    height: 4px !important;
+  }
+  .jobcatagories img{
+    height: 250px;
+   
+  }
+  .jobcatagories .btn, .Carousel .btn{
+    background-color: #93cfcf;
+    color: white;
+    border: 1px solid #93cfcf;
+  }
+  .jobcatagories .btn :hover,.Carousel .btn:hover{
+    background-color: white !important;
+    color: #93cfcf !important;
+    border: 1px solid #93cfcf !important;
+  }
+
+  .herosection button {
+    background-color: #93cfcf;
+    color: white;
+    border: 1px solid #93cfcf;
+  }
+  .herosection button:hover{
+    background-color: white !important;
+    color: #93cfcf !important;
+    border: 1px solid #93cfcf !important;
+  }
+
+  .herosection a :hover{
+    color: #93cfcf;
+    background-color: white;
+  }
+  .herosection a{
+    text-decoration: none;
+    color: black;
+  }

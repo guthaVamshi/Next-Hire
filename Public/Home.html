@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Hunt - Find Your Dream Job</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="Home.css">
+</head>
+
+<body>
+    <div class="header-content sticky-top">
+        <a href="Home.html">
+        <img src="images/next-hire.png" alt="Next Hire Logo" class="logo"></a>
+        <nav class="nav-links">
+            <button id="goToSignIn"><a href="Home.html">Home</a></button>
+            <button id="goToSignIn" style="margin: 0px 2em;"><a href="Signin.html">Logout</a></button>
+        </nav>
+    </div>
+
+    <body>
+        <section class="herosection text-white text-center py-5">
+            <div class="container">
+                <h1 class="display-4">Find Your Dream {Job}</h1>
+                <p class="lead">Explore thousands of job opportunities from top companies</p>
+                <button type="button" class="btn btn-light" id="GetStarted" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Get Started
+                </button>
+                <button type="button" class="btn btn-light" id="viewJobs"><a href="Jobs.html">View Latest Available Jobs</a>
+                    
+                </button>
+                <button type="button" class="btn btn-light"><a href="AppliedJobs.html">View Applied Jobs</a>
+                    
+                </button>
+            </div>
+        </section>
+
+        <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Fill Your Details to create your profile</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        
+                            <div class="mb-3">
+                                <label for="Firstname" class="form-label">First Name</label>
+                                <input type="text" class="form-control" name="Firstname" id="Firstname" placeholder="Enter first name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Lastname" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" name="Lastname" id="Lastname" placeholder="Enter last name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Phone" class="form-label">Phone</label>
+                                <input type="text" class="form-control" name="Phone" id="Phone" placeholder="Enter phone number">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Email" class="form-label">Email</label>
+                                <input type="email" class="form-control" name="Email" id="Email" placeholder="Enter email address">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Education" id="Education">Education</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="BA/BS">BA/BS</option>
+                                    <option value="HS Diploma">HS Diploma</option>
+                                    <option value="	MA/MS/MBA">	MA/MS/MBA</option>
+                                    <option value="PH.D">PH.D</option>
+                                    <option value="Post.Doc">Post.Doc</option>
+                                  </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="CurrentEmployer" class="form-label">Current Employer</label>
+                                <input type="text" class="form-control" name="CurrentEmployer" id="CurrentEmployer" placeholder="Enter current employer">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Currently Employed</label>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="CurrentlyEmployed" id="CurrentlyEmployed">
+                                    <label for="CurrentlyEmployed" class="form-check-label">Yes</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">US Citizen</label>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="USCitizen" id="USCitizen">
+                                    <label for="USCitizen" class="form-check-label">Yes</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Sponsorship Needed</label>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="SponsorshipNeeded" id="SponsorshipNeeded">
+                                    <label for="SponsorshipNeeded" class="form-check-label">Yes</label>
+                                </div>
+                            </div>
+                            <button  id="CreateCandidate" class="btn btn-primary">Submit</button>
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Job Categories -->
+        <section class="py-5 jobcatagories">
+            <div class="container">
+                <h2 class="text-center mb-4">Job Categories</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="Images/software.jpg" class="card-img-top"
+                                alt="Software Engineering">
+                            <div class="card-body">
+                                <h5 class="card-title">Software Engineering</h5>
+                                <p class="card-text">Find the latest job opportunities in software development and
+                                    engineering.</p>
+                                <a href="#" class="btn">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="Images/marketing.webp" class="card-img-top" alt="Marketing">
+                            <div class="card-body">
+                                <h5 class="card-title">Marketing</h5>
+                                <p class="card-text">Discover a variety of marketing jobs, from digital marketing to
+                                    branding.</p>
+                                <a href="#" class="btn ">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="Images/finance.webp" class="card-img-top" alt="Finance">
+                            <div class="card-body">
+                                <h5 class="card-title">Finance</h5>
+                                <p class="card-text">Search for jobs in finance, accounting, and investment banking.</p>
+                                <a href="#" class="btn ">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Featured Jobs Carousel -->
+<section class="py-5 bg-light Carousel">
+    <div class="container">
+        <h2 class="text-center mb-4">Featured Jobs</h2>
+        <div id="featuredJobsCarousel" class="carousel slide" data-bs-ride="carousel" style="width: 55%; margin: auto;">
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#featuredJobsCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#featuredJobsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#featuredJobsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Software Developer</h5>
+                                    <p class="card-text">ABC Corp - San Francisco, CA</p>
+                                    <p class="card-text"><small class="text-muted">Posted 3 days ago</small></p>
+                                    <a href="#" class="btn">Apply Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Marketing Manager</h5>
+                                    <p class="card-text">XYZ Ltd - New York, NY</p>
+                                    <p class="card-text"><small class="text-muted">Posted 1 week ago</small></p>
+                                    <a href="#" class="btn btn-primary">Apply Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Financial Analyst</h5>
+                                    <p class="card-text">DEF Inc - Chicago, IL</p>
+                                    <p class="card-text"><small class="text-muted">Posted 2 weeks ago</small></p>
+                                    <a href="#" class="btn btn-primary">Apply Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#featuredJobsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#featuredJobsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+        <footer>
+            <div class="footer-content">
+                <div class="info-section">
+                    <h2>Company Information</h2>
+                    <nav class="footer-nav">
+                        <a href="termsandconditions.html">Terms and Conditions</a>
+                        <a href="aboutus.html">About Us</a>
+                        <a href="accessibility.html">Accessibility</a>
+                        <a href="copyright.html">Copyright</a>
+                        <a href="user.html">User Agreement Policy</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                    </nav>
+                </div>
+                <div class="resume-section">
+                    <h2>Create Your Resume</h2>
+                    <a href="https://r.search.yahoo.com/rdclks/dWU9Nzd0NWhxMWppMDQ4ZiZ1dD0xNzMwMTU0NzY3NzM4JnVvPTczNDYxMzY2NDU2NTEwJmx0PTImcz0xJmVzPWJ2ek5pMG9hY3htaFl4TWVHU2pCYlljQ2Y5N0ZackNTd0VaMjEuWVRMdm5aNERuYUV3Lk1lZlNaOGZKQjZpWUtFbHl5aTNXY3ZqYUd6M1pEOUEtLQ--/RV=2/RE=1732746768/RO=14/RU=https%3a%2f%2fwww.bing.com%2faclick%3fld%3de8YtXahMJPd1A3sSAueCK3dTVUCUxtl1stTxC39DkD8rGBhcnYkfaI_EO4_pRiLo4El5s4dBj7Vi3rM0CUVTaI32SR1HOXl0pil-CCI31C2tWp9y2mEyZlJN6kkHtXsQWwpsLbpzktviuGj31-u1W_k55gHmEnSrsggpClrOtYy2wg1ja96cYEZ-209dbFPtAjIs6_Fg%26u%3daHR0cHMlM2ElMmYlMmZ3d3cucmVzdW1lLW5vdy5jb20lMmZscCUyZnJuYXJzbXNtMTEwLmFzcHglM2Z1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RzZW0lMjZ1dG1fY2FtcGFpZ24lM2Q1MTY0NjgzMSUyNnV0bV90ZXJtJTNkcmVzdW1lJTI1MjBidWlsZGVyJTI2bmV0d29yayUzZG8lMjZkZXZpY2UlM2RjJTI2YWRwb3NpdGlvbiUzZCUyNmFkZ3JvdXBpZCUzZDEyMzI0NzAxNzklMjZtc2Nsa2lkJTNkNDQwYmVlZTZhYjFmMTBiZWY1OWM4OWM2YmEwZjk2OGYlMjZ1dG1fY29udGVudCUzZHJlc3VtZSUyNTIwYnVpbGRlciUyNTIwKGhlYWQp%26rlid%3d440beee6ab1f10bef59c89c6ba0f968f/RK=2/RS=B.B1aiNCglrRu.Tp55dhE6DHuzo-;_ylt=AwrhchwPESBnNLw8hBcPxQt.;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA292LXRvcA--;_ylc=X3IDMgRydAMw?IG=0ae1721c752146218200000000f601b0">Resume Builder</a>
+                    <a href="https://www.jobscan.co/resume-score">Check Your Resume ATS</a>
+                  </div>
+                <div class="job-recruiting-section">
+                    <h2>Learn More About Job Recruiting</h2>
+                    <a href="https://www.forbes.com/advisor/business/recruitment-strategies/">Job Recruiting Tips</a>
+                    <a href="https://www.coursera.org//">Ehance Your Skillset</a>
+                </div>
+                <div class="social-media-section">
+                    <h2>Follow Us on Social Media</h2>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/signin" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/login" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/accounts/login/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+          </footer>
+        <!-- Bootstrap JS (optional) -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>
+</body>
+
+</html>
