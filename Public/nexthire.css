@@ -16,8 +16,8 @@ body {
 
 .content-wrapper {
     display: flex;
-    justify-content: flex-end; /* Align items to the left */
-    align-items: flex-end;
+    justify-content: center; /* Align items to the left */
+    align-items: center;
 }
 
 /* Categories Section */
@@ -84,6 +84,7 @@ body {
 .logo {
     width: 120px; /* Increase the width to make the logo slightly larger */
     height: auto; /* Maintain aspect ratio */
+    margin: 0px 2em;
 }
 
 nav.nav-links {
