@@ -234,3 +234,9 @@ button a{
   }
 }
 
+#carousel-items img{
+  height: 7rem !important;
+}
+#indicators{
+  position: relative !important;
+}

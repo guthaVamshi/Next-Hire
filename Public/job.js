@@ -27,7 +27,7 @@ window.onload = function () {
 function Populatedata(page = 1) {
   const positionsContainer = document.querySelector("#positionsContainer");
   const loadingSpinner = document.querySelector("#loadingSpinner");
-
+  const footer = document.querySelector('footer');
   // Show the loading spinner and clear the container
   loadingSpinner.style.display = "block";
   positionsContainer.innerHTML = "";
@@ -43,6 +43,8 @@ function Populatedata(page = 1) {
     // Check if there are jobs to display
     if (paginatedJobs.length === 0) {
       positionsContainer.innerHTML = "<p>No jobs found</p>";
+      footer.style.position = "sticky";
+      footer.style.bottom = '0';
       loadingSpinner.style.display = "none"; // Hide the spinner after data is loaded
       return;
     }
@@ -111,7 +113,7 @@ function Populatedata(page = 1) {
 
     // Update pagination buttons
     updatePaginationControls();
-  }, 500); // Adjust timeout as necessary for loading effect
+  }, 2000); // Adjust timeout as necessary for loading effect
 }
 
 // Function to update pagination controls
