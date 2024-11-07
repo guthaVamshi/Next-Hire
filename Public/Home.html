@@ -223,8 +223,9 @@
         <!-- Job cards will be inserted here -->
     </div>
 </div>
-<div class="container">
-    <div id="companyCarousel" class="carousel slide" data-ride="carousel">
+<div class="container" >
+    <h2 class="text-center mb-4">Top Ten companies</h2>
+    <div id="companyCarousel" class="carousel slide" data-ride="carousel" style="margin: 5em ">
         <div class="carousel-inner " id="carousel-items">
             <!-- Carousel items will be populated here by JavaScript -->
         </div>
@@ -236,6 +237,13 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+        <div class="carousel-indicators" id="indicators">
+            <button type="button" data-bs-target="#featuredJobsCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#featuredJobsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#featuredJobsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#featuredJobsCarousel" data-bs-slide-to="2" aria-label="Slide 4"></button>
+        </div>
     </div>
     
 </div>
