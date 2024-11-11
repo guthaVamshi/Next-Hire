@@ -362,22 +362,24 @@ app.post('/upload', upload.fields([
   }
 });
 
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+
 
 app.get('/candidate', (req, res) => {
+  
 
-  // Make a request to Salesforce Apex REST resource
-  conn.apex.get(`/services/apexrest/profile?CandidateId=${CandidateId}`, (err, result) => {
-      if (err) {
-          return res.status(500).send('Error fetching data from Salesforce: ' + err.message);
-      }
-      res.json(result); // Send the fetched data to frontend
-      console.log(result);
-  });
+  if (!CandidateId) {
+    return res.status(400).json({ error: 'CandidateId is required' });
+  }
+
+  conn.apex.get(`/services/apexrest/profile?CandidateId=${CandidateId}`)
+    .then(result => {
+      console.log('Profile:', result);
+      res.json(result);
+    })
+    .catch(err => {
+      console.error('Error fetching data from Salesforce:', err);
+      res.status(500).json({ error: 'Error fetching data from Salesforce', details: err.message });
+    });
 });
 app.patch('/candidate', (req, res) => {
   // Get CandidateId from URL parameters
@@ -400,8 +402,8 @@ app.patch('/candidate', (req, res) => {
           console.error('Salesforce update error:', err); // Log the error for debugging
           return res.status(500).send('Error updating data in Salesforce: ' + err.message);
       }
-      console.log('Successfully updated:', result); // Log successful result
-      res.send(result);
+        console.log('Successfully updated:', result); // Log successful result
+      
   });
 });
 function uploadFileToSalesforce(filePath, fileName, RecordId) {
@@ -421,10 +423,14 @@ function uploadFileToSalesforce(filePath, fileName, RecordId) {
         VersionData: fileData, 
         FirstPublishLocationId: RecordId 
       }, (err, res) => {
+        console.log("success full" + res);
         if (err || !res.success) {
           return reject(new Error('Error uploading file: ' + err.message));
         }
         resolve('File uploaded successfully: ' + res.id);
+        res.send({
+          "Success":"true"
+        });
       });
     });
   });
@@ -433,3 +439,8 @@ app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
 
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});

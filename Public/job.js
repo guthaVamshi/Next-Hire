@@ -4,6 +4,7 @@ const jobsPerPage = 10; // Number of jobs to show per page
 let filteredJobs = []; // Initially set to all jobs (no filter)
 
 window.onload = function () {
+  loadingSpinner.style.display = "flex";
   // Fetch job data on initial load
   fetch("/api/getJobs")
     .then((response) => response.json())
@@ -29,7 +30,7 @@ function Populatedata(page = 1) {
   const loadingSpinner = document.querySelector("#loadingSpinner");
   const footer = document.querySelector('footer');
   // Show the loading spinner and clear the container
-  loadingSpinner.style.display = "block";
+  
   positionsContainer.innerHTML = "";
 
   // Calculate the start and end index for slicing the job data

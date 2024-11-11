@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
+
     window.onload = function() {
+        loadingSpinner.style.display = "flex";
+        MainContent.style.display="none";
         fetch('/api/AppliedJobs', {
             method: 'POST'
         })
@@ -32,6 +35,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                 `;
                 jobCardsContainer.innerHTML += card; // Append the card to the container
+                setTimeout(() => {
+                    document.getElementById('loadingSpinner').style.display = 'none';
+                    document.getElementById('MainContent').style.display = "block";
+                }, 2000);
             });
         })
         .catch(error => {
