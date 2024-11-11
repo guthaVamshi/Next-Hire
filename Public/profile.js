@@ -5,33 +5,46 @@ window.onload = async function() {
 
 // Function to fetch and display candidate details
 async function fetchCandidateDetails() {
-    const response = await fetch(`/candidate`);
-    
-    if (!response.ok) {
-        alert('Error fetching candidate details');
-        return;
+    // Show loading screen
+    document.getElementById('loadingSpinner').style.display = 'flex';
+    document.getElementById('MainContent').style.display = "none";
+    try {
+        const response = await fetch(`/candidate`);
+        
+        if (!response.ok) {
+            alert('Error fetching candidate details');
+            return;
+        }
+
+        const data = await response.json();
+
+        // Populate form with data
+        document.getElementById('firstName').value = data[0].First_Name__c || '';
+        document.getElementById('lastName').value = data[0].Last_Name__c || '';
+        document.getElementById('email').value = data[0].Email__c || '';
+        document.getElementById('phone').value = data[0].Phone__c || '';
+        document.getElementById('mobile').value = data[0].Mobile__c || '';
+        document.getElementById('street').value = data[0].Street__c || '';
+        document.getElementById('city').value = data[0].City__c || '';
+        document.getElementById('state').value = data[0].State__c || '';
+        document.getElementById('country').value = data[0].Country__c || '';
+        document.getElementById('postalCode').value = data[0].Postal_Code__c || '';
+        document.getElementById('education').value = data[0].Education__c || '';
+        document.getElementById('yearsOfExperience').value = data[0].Years_of_Experience__c || '';
+        document.getElementById('CurrentEmployer').value = data[0].Current_Employeer__c || '';
+        document.getElementById('currentlyEmployed').checked = data[0].Currently_Emoloyed__c || false;
+        document.getElementById('usCitizen').checked = data[0].US_Citizen__c || false;
+        document.getElementById('visaRequired').checked = data[0].Visa_Required__c || false;
+
+    } catch (error) {
+        alert('Error fetching candidate details: ' + error.message);
+    } finally {
+        // Hide the loading screen after a delay
+        setTimeout(() => {
+            document.getElementById('loadingSpinner').style.display = 'none';
+            document.getElementById('MainContent').style.display = "block";
+        }, 2000);
     }
-
-    const data = await response.json();
-
-    // Populate form with data
-    document.getElementById('firstName').value = data[0].First_Name__c || '';
-    document.getElementById('lastName').value = data[0].Last_Name__c || '';
-    document.getElementById('email').value = data[0].Email__c || '';
-    document.getElementById('phone').value = data[0].Phone__c || '';
-    document.getElementById('mobile').value = data[0].Mobile__c || '';
-    document.getElementById('street').value = data[0].Street__c || '';
-    document.getElementById('city').value = data[0].City__c || '';
-    document.getElementById('state').value = data[0].State__c || '';
-    document.getElementById('country').value = data[0].Country__c || '';
-    document.getElementById('postalCode').value = data[0].Postal_Code__c || '';
-    document.getElementById('education').value = data[0].Education__c || '';
-    document.getElementById('yearsOfExperience').value = data[0].Years_of_Experience__c || '';
-    document.getElementById('CurrentEmployer').value = data[0].Current_Employeer__c ||'';
-    // Handle checkbox states
-    document.getElementById('currentlyEmployed').checked = data[0].Currently_Emoloyed__c || false;
-    document.getElementById('usCitizen').checked = data[0].US_Citizen__c || false;
-    document.getElementById('visaRequired').checked = data[0].Visa_Required__c || false;
 }
 
 // Function to update candidate details
@@ -49,6 +62,7 @@ function updateCandidateDetails() {
     const postalCode = document.getElementById('postalCode').value.trim();
     const education = document.getElementById('education').value;
     const yearsOfExperience = document.getElementById('yearsOfExperience').value.trim();
+    const currentEmployer = document.getElementById('CurrentEmployer').value.trim();
     const currentlyEmployed = document.getElementById('currentlyEmployed').checked;
     const usCitizen = document.getElementById('usCitizen').checked;
     const visaRequired = document.getElementById('visaRequired').checked;
@@ -119,7 +133,8 @@ function updateCandidateDetails() {
         Years_of_Experience__c: parseInt(yearsOfExperience),
         Currently_Emoloyed__c: currentlyEmployed,
         US_Citizen__c: usCitizen,
-        Visa_Required__c: visaRequired
+        Visa_Required__c: visaRequired,
+        Current_Employeer__c:currentEmployer
     };
 
     // Send PATCH request to the server

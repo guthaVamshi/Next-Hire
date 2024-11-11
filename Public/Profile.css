@@ -1,0 +1,314 @@
+body {
+    font-family: 'Helvetica', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #fff;
+    border-bottom: 2px solid #93cfcf;
+}
+
+.logo {
+    width: 120px;
+    /* Increase the width to make the logo slightly larger */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin: 0px 2em;
+}
+#loadingSpinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+
+/* From Uiverse.io by alexruix */ 
+.loader {
+    position: relative;
+    width: 120px;
+    height: 90px;
+    margin: 0 auto;
+    
+  }
+  
+  .loader:before {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #2a9d8f;
+    animation: loading-bounce 0.5s ease-in-out infinite alternate;
+  }
+  
+  .loader:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 7px;
+    width: 45px;
+    border-radius: 4px;
+    box-shadow: 0 5px 0 #030303, -35px 50px 0 #010101, -70px 95px 0 #060606;
+    animation: loading-step 1s ease-in-out infinite;
+  }
+  
+  @keyframes loading-bounce {
+    0% {
+      transform: scale(1, 0.7);
+    }
+  
+    40% {
+      transform: scale(0.8, 1.2);
+    }
+  
+    60% {
+      transform: scale(1, 1);
+    }
+  
+    100% {
+      bottom: 140px;
+    }
+  }
+  
+  @keyframes loading-step {
+    0% {
+      box-shadow: 0 10px 0 rgba(0, 0, 0, 0),
+              0 10px 0 #030303,
+              -35px 50px 0 #030303,
+              -70px 90px 0 #030303;
+    }
+  
+    100% {
+      box-shadow: 0 10px 0 #030303,
+              -35px 50px 0 #030303,
+              -70px 90px 0 #030303,
+              -70px 90px 0 rgba(0, 0, 0, 0);
+    }
+  }
+
+nav.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+nav.nav-links button {
+    background-color: #93cfcf;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    margin: 0px 2em;
+}
+
+nav.nav-links button:hover {
+    background-color: white;
+    color: #93cfcf;
+    border-color: #93cfcf;
+    border: 1px solid;
+}
+
+.header-content a {
+    text-decoration: none;
+    color: white;
+}
+
+h1,
+h2 {
+    color: #1a73e8;
+    /* Indeed blue */
+    font-weight: bold;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #1a73e8;
+    border-color: #1a73e8;
+}
+
+.section-title {
+    margin-top: 30px;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+label {
+    width: 100%;
+    /* Decrease label width */
+    font-size: 0.9rem;
+}
+
+input,
+select {
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-row .form-group {
+    padding-right: 15px;
+    /* Add spacing between the two columns */
+}
+
+footer {
+    margin-top: 2em;
+    /* Ensure no top margin */
+    padding: 40px 20px;
+    background-color: #fff;
+    /* Background color for footer */
+    border-top: 1px solid #ccc;
+    /* Optional border for separation */
+}
+
+.footer-content {
+    display: flex;
+    /* Use flexbox for layout */
+    justify-content: space-between;
+    /* Space sections evenly */
+    align-items: flex-start;
+    /* Align items to the top */
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+    max-width: 1200px;
+    /* Optional: limit the width of the footer */
+    margin: 0 auto;
+    /* Center the footer content */
+}
+
+.footer-content>div {
+    flex: 1;
+    /* Allow equal growth */
+    margin-right: 20px;
+    /* Space between sections */
+}
+
+.footer-content>div:last-child {
+    margin-right: 0;
+    /* Remove margin from the last section */
+}
+
+.footer-content h2 {
+    font-size: 1.5rem;
+    /* Font size for headings */
+    color: #343a40;
+    /* Dark text color */
+    margin: 10px 0;
+    /* Margin for spacing */
+}
+
+.footer-nav,
+.social-nav {
+    display: flex;
+    flex-direction: column;
+    /* Stack links vertically */
+    gap: 8px;
+    /* Space between links */
+}
+
+.footer-nav a,
+.social-nav a {
+    color: #93cfcf;
+    /* Color for footer links */
+    text-decoration: none;
+    /* Remove underline */
+    font-size: 1rem;
+    /* Font size for links */
+}
+
+.footer-nav a:hover,
+.social-nav a:hover {
+    text-decoration: underline;
+    /* Underline on hover */
+    color: darkblue;
+    /* Change color on hover */
+}
+
+.resume-section,
+.job-recruiting-section {
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    margin-bottom: 20px;
+    /* Space between sections */
+}
+
+.resume-section a,
+.job-recruiting-section a {
+    margin-top: 10px;
+    /* Space between links */
+    color: #93cfcf;
+    /* Link color */
+    text-decoration: none;
+    /* Remove underline */
+    transition: color 0.3s;
+    /* Transition effect */
+}
+
+.resume-section a:hover,
+.job-recruiting-section a:hover {
+    color: darkblue;
+    /* Change color on hover */
+}
+
+
+/* Optional: Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        /* Stack sections vertically on small screens */
+    }
+
+    .footer-content>div {
+        margin-right: 0;
+        /* Remove margin for stacked sections */
+        margin-bottom: 20px;
+        /* Add space below each section */
+    }
+
+}
+
+.social-media-section {
+    display: flex;
+    flex-direction: column;
+    /* Stack the heading and icons */
+    align-items: flex-start;
+    /* Align to the start */
+}
+
+.social-icons {
+    display: flex;
+    /* Display icons inline */
+    gap: 10px;
+    /* Space between icons */
+}
+
+.social-icons a {
+    color: #93cfcf;
+    /* Icon color */
+    font-size: 1.5rem;
+    /* Size of the icons */
+    transition: color 0.3s;
+    /* Transition effect */
+}
+
+.social-icons a:hover {
+    color: darkblue;
+    /* Change color on hover */
+}

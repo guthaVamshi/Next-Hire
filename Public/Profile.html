@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Profile.css">
+    <title>Indeed Style Candidate Profile</title>
+    <script src="Profile.js" defer></script> <!-- Link to the JavaScript file -->
+</head>
+<div class="header-content">
+    <a href="Home.html">
+    <img src="images/next-hire.png" alt="Next Hire Logo" class="logo"></a>
+    <nav class="nav-links">
+        <button id="goToSignIn"><a href="Home.html">Home</a></button>
+    </nav>
+</div>
+<body>
+    <div id="loadingSpinner" style="display: none;">
+        <div class="loader"></div></div>
+    
+    <div class="container mt-5" id="MainContent">
+        <h1 class="text-center mb-4">Candidate Profile</h1>
+
+        <!-- Personal Details Section -->
+        <h2 class="section-title"><i class="fas fa-user"></i> Personal Information</h2>
+        <form id="candidateForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstName"><i class="fas fa-user"></i> First Name:</label>
+                    <input type="text" class="form-control" id="firstName" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName"><i class="fas fa-user"></i> Last Name:</label>
+                    <input type="text" class="form-control" id="lastName" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="phone"><i class="fas fa-phone"></i> Phone:</label>
+                    <input type="tel" class="form-control" id="phone" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="mobile"><i class="fas fa-mobile-alt"></i> Mobile:</label>
+                    <input type="tel" class="form-control" id="mobile" required>
+                </div>
+            </div>
+
+            <!-- Address Section -->
+            <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> Address</h2>
+            <div class="form-group">
+                <label for="street"><i class="fas fa-road"></i> Street:</label>
+                <input type="text" class="form-control" id="street" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="city"><i class="fas fa-city"></i> City:</label>
+                    <input type="text" class="form-control" id="city" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="state"><i class="fas fa-flag"></i> State:</label>
+                    <input type="text" class="form-control" id="state" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="country"><i class="fas fa-globe"></i> Country:</label>
+                    <input type="text" class="form-control" id="country" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="postalCode"><i class="fas fa-envelope-open"></i> Postal Code:</label>
+                <input type="text" class="form-control" id="postalCode" required>
+            </div>
+
+            <!-- Education Section -->
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="form-group">
+                <label for="education"><i class="fas fa-book"></i> Education Level:</label>
+                <select class="form-control" id="education" required>
+                    <option value="" disabled selected>Select your education level</option>
+                    <option value="Ba/BS">Ba/BS</option>
+                    <option value="HS Diploma">HS Diploma</option>
+                    <option value="MA/MS/MBA">MA/MS/MBA</option>
+                    <option value="PH.D">PH.D</option>
+                    <option value="Post.Doc">Post.Doc</option>
+                </select>
+            </div>
+
+            <!-- Employment Section -->
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Employment Details</h2>
+            <div class="form-group">
+                <label for="CurrentEmployer"><i class="fas fa-building"></i> Current Employer:</label>
+                <input type="text" class="form-control" id="CurrentEmployer" required>
+            </div>
+            <div class="form-group">
+                <label for="yearsOfExperience"><i class="fas fa-tasks"></i> Years of Experience:</label>
+                <input type="number" class="form-control" id="yearsOfExperience" required>
+            </div>
+
+            <!-- Checkboxes for Employment Status -->
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="currentlyEmployed">
+                <label class="form-check-label" for="currentlyEmployed"><i class="fas fa-check-circle"></i> Currently Employed</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="usCitizen">
+                <label class="form-check-label" for="usCitizen"><i class="fas fa-flag-usa"></i> US Citizen</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="visaRequired">
+                <label class="form-check-label" for="visaRequired"><i class="fas fa-passport"></i> Visa Required</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="button" class="btn btn-primary btn-block" onclick="updateCandidateDetails()">
+                <i class="fas fa-save"></i> Update Details
+            </button>
+        </form>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content text-center p-4">
+                <div class="modal-body">
+                    <i class="fa-regular fa-circle-check fa-beat-fade fa-2xl"></i>
+                    <h5 class="modal-title mt-4" id="successModalLabel">Update Successful!</h5>
+                    <p>Your details have been successfully updated!</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="info-section">
+                <h2>Company Information</h2>
+                <nav class="footer-nav">
+                    <a href="termsandconditions.html">Terms and Conditions</a>
+                    <a href="aboutus.html">About Us</a>
+                    <a href="accessibility.html">Accessibility</a>
+                    <a href="copyright.html">Copyright</a>
+                    <a href="user.html">User Agreement Policy</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                </nav>
+            </div>
+            <div class="resume-section">
+                <h2>Create Your Resume</h2>
+                <a href="https://r.search.yahoo.com/rdclks/dWU9Nzd0NWhxMWppMDQ4ZiZ1dD0xNzMwMTU0NzY3NzM4JnVvPTczNDYxMzY2NDU2NTEwJmx0PTImcz0xJmVzPWJ2ek5pMG9hY3htaFl4TWVHU2pCYlljQ2Y5N0ZackNTd0VaMjEuWVRMdm5aNERuYUV3Lk1lZlNaOGZKQjZpWUtFbHl5aTNXY3ZqYUd6M1pEOUEtLQ--/RV=2/RE=1732746768/RO=14/RU=https%3a%2f%2fwww.bing.com%2faclick%3fld%3de8YtXahMJPd1A3sSAueCK3dTVUCUxtl1stTxC39DkD8rGBhcnYkfaI_EO4_pRiLo4El5s4dBj7Vi3rM0CUVTaI32SR1HOXl0pil-CCI31C2tWp9y2mEyZlJN6kkHtXsQWwpsLbpzktviuGj31-u1W_k55gHmEnSrsggpClrOtYy2wg1ja96cYEZ-209dbFPtAjIs6_Fg%26u%3daHR0cHMlM2ElMmYlMmZ3d3cucmVzdW1lLW5vdy5jb20lMmZscCUyZnJuYXJzbXNtMTEwLmFzcHglM2Z1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RzZW0lMjZ1dG1fY2FtcGFpZ24lM2Q1MTY0NjgzMSUyNnV0bV90ZXJtJTNkcmVzdW1lJTI1MjBidWlsZGVyJTI2bmV0d29yayUzZG8lMjZkZXZpY2UlM2RjJTI2YWRwb3NpdGlvbiUzZCUyNmFkZ3JvdXBpZCUzZDEyMzI0NzAxNzklMjZtc2Nsa2lkJTNkNDQwYmVlZTZhYjFmMTBiZWY1OWM4OWM2YmEwZjk2OGYlMjZ1dG1fY29udGVudCUzZHJlc3VtZSUyNTIwYnVpbGRlciUyNTIwKGhlYWQp%26rlid%3d440beee6ab1f10bef59c89c6ba0f968f/RK=2/RS=B.B1aiNCglrRu.Tp55dhE6DHuzo-;_ylt=AwrhchwPESBnNLw8hBcPxQt.;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA292LXRvcA--;_ylc=X3IDMgRydAMw?IG=0ae1721c752146218200000000f601b0">Resume Builder</a>
+                <a href="https://www.jobscan.co/resume-score">Check Your Resume ATS</a>
+              </div>
+            <div class="job-recruiting-section">
+                <h2>Learn More About Job Recruiting</h2>
+                <a href="https://www.forbes.com/advisor/business/recruitment-strategies/">Job Recruiting Tips</a>
+                <a href="https://www.coursera.org//">Ehance Your Skillset</a>
+            </div>
+            <div class="social-media-section">
+                <h2>Follow Us on Social Media</h2>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/signin" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/login" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/accounts/login/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+      </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
