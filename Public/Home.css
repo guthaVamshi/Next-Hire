@@ -240,3 +240,10 @@ button a{
 #indicators{
   position: relative !important;
 }
+#ShowUserName{
+  color: black;
+  
+}
+#ShowUserName i{
+  margin-right: 0.5em;
+}
