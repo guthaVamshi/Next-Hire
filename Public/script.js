@@ -8,6 +8,8 @@ window.onload = function() {
             } else {
                 console.log(data);
                 console.log(data.CandidateId);
+                const classuser = document.getElementById('ShowUserName');
+                classuser.innerHTML += data.Username;
                 if(data.CandidateId != null){
                     document.getElementById('GetStarted').style.display = 'none';
                     document.getElementById('viewJobs').style.display = 'inline';
