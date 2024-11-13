@@ -37,77 +37,75 @@
             </div>
         </section>
 
-        <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Fill Your Details to create your profile</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        
-                            <div class="mb-3">
-                                <label for="Firstname" class="form-label">First Name</label>
-                                <input type="text" class="form-control" name="Firstname" id="Firstname" placeholder="Enter first name">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel"><i class="fas fa-user-plus"></i> Fill Your Details to Create Your Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-4">
+                            <label for="Firstname" class="form-label"><i class="fas fa-user"></i> First Name</label>
+                            <input type="text" class="form-control" name="Firstname" id="Firstname" placeholder="Enter first name">
+                        </div>
+                        <div class="mb-4">
+                            <label for="Lastname" class="form-label"><i class="fas fa-user"></i> Last Name</label>
+                            <input type="text" class="form-control" name="Lastname" id="Lastname" placeholder="Enter last name">
+                        </div>
+                        <div class="mb-4">
+                            <label for="Phone" class="form-label"><i class="fas fa-phone"></i> Phone</label>
+                            <input type="text" class="form-control" name="Phone" id="Phone" placeholder="Enter phone number">
+                        </div>
+                        <div class="mb-4">
+                            <label for="Email" class="form-label"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" class="form-control" name="Email" id="Email" placeholder="Enter email address">
+                        </div>
+                        <div class="mb-4">
+                            <label for="Education" class="form-label"><i class="fas fa-graduation-cap"></i> Education</label>
+                            <select class="form-select" id="Education" aria-label="Select Education Level">
+                                <option value="BA/BS">BA/BS</option>
+                                <option value="HS Diploma">HS Diploma</option>
+                                <option value="MA/MS/MBA">MA/MS/MBA</option>
+                                <option value="PH.D">PH.D</option>
+                                <option value="Post.Doc">Post.Doc</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="CurrentEmployer" class="form-label"><i class="fas fa-building"></i> Current Employer</label>
+                            <input type="text" class="form-control" name="CurrentEmployer" id="CurrentEmployer" placeholder="Enter current employer">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label"><i class="fas fa-briefcase"></i> Currently Employed</label>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="CurrentlyEmployed" id="CurrentlyEmployed">
+                                <label for="CurrentlyEmployed" class="form-check-label">Yes</label>
                             </div>
-                            <div class="mb-3">
-                                <label for="Lastname" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" name="Lastname" id="Lastname" placeholder="Enter last name">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label"><i class="fas fa-flag"></i> US Citizen</label>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="USCitizen" id="USCitizen">
+                                <label for="USCitizen" class="form-check-label">Yes</label>
                             </div>
-                            <div class="mb-3">
-                                <label for="Phone" class="form-label">Phone</label>
-                                <input type="text" class="form-control" name="Phone" id="Phone" placeholder="Enter phone number">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label"><i class="fas fa-handshake"></i> Sponsorship Needed</label>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="SponsorshipNeeded" id="SponsorshipNeeded">
+                                <label for="SponsorshipNeeded" class="form-check-label">Yes</label>
                             </div>
-                            <div class="mb-3">
-                                <label for="Email" class="form-label">Email</label>
-                                <input type="email" class="form-control" name="Email" id="Email" placeholder="Enter email address">
-                            </div>
-                            <div class="mb-3">
-                                <label for="Education" id="Education">Education</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option value="BA/BS">BA/BS</option>
-                                    <option value="HS Diploma">HS Diploma</option>
-                                    <option value="	MA/MS/MBA">	MA/MS/MBA</option>
-                                    <option value="PH.D">PH.D</option>
-                                    <option value="Post.Doc">Post.Doc</option>
-                                  </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="CurrentEmployer" class="form-label">Current Employer</label>
-                                <input type="text" class="form-control" name="CurrentEmployer" id="CurrentEmployer" placeholder="Enter current employer">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Currently Employed</label>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" name="CurrentlyEmployed" id="CurrentlyEmployed">
-                                    <label for="CurrentlyEmployed" class="form-check-label">Yes</label>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">US Citizen</label>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" name="USCitizen" id="USCitizen">
-                                    <label for="USCitizen" class="form-check-label">Yes</label>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Sponsorship Needed</label>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" name="SponsorshipNeeded" id="SponsorshipNeeded">
-                                    <label for="SponsorshipNeeded" class="form-check-label">Yes</label>
-                                </div>
-                            </div>
-                            <button  id="CreateCandidate" class="btn btn-primary">Submit</button>
-                        
-                        
-                        
-                        
-                    </div>
-                    
+                        </div>
+                        <button type="submit" id="CreateCandidate" class="btn btn-primary w-100"><i class="fas fa-paper-plane"></i> Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
+    
+    
         <!-- Job Categories -->
         <section class="py-5 jobcatagories">
             <div class="container">
@@ -247,6 +245,20 @@
         </div>
     </div>
     
+</div>
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">Success!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Your details have been saved. You will be redirected to the home page shortly.
+            </div>
+        </div>
+    </div>
 </div>
 
         <footer>

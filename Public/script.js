@@ -27,7 +27,6 @@ window.onload = function() {
         })
         .catch(error => console.error('Error fetching JSON:', error));
 };
-
 const Createcan = document.getElementById('CreateCandidate');
 Createcan.addEventListener('click', async function(event) {
     event.preventDefault(); // Prevent the form from submitting the traditional way
@@ -45,6 +44,27 @@ Createcan.addEventListener('click', async function(event) {
         SponsorshipNeeded: document.getElementById('SponsorshipNeeded').checked
     };
 
+    // Remove any previous error message
+    const previousError = document.getElementById('phone-error');
+    if (previousError) {
+        previousError.remove();
+    }
+
+    // Validate phone number (must be 10 digits)
+    const phonePattern = /^\d{10}$/;
+    if (!phonePattern.test(formData.Phone)) {
+        const errorMessage = document.createElement('div');
+        errorMessage.id = 'phone-error';
+        errorMessage.classList.add('text-danger', 'mt-2');
+        errorMessage.textContent = 'Please enter a valid phone number with exactly 10 digits.';
+        
+        // Append the error message below the Phone input field
+        const phoneInputField = document.getElementById('Phone');
+        phoneInputField.insertAdjacentElement('afterend', errorMessage);
+        return; // Prevent form submission if validation fails
+    }
+
+    // If validation passes, send the data
     fetch('/api/CreateCandidate', {
         method: 'POST',
         headers: {
@@ -54,9 +74,22 @@ Createcan.addEventListener('click', async function(event) {
     })
     .then(response => response.json())
     .then(data => {
-        window.location.href = 'Home.html';
+        // Show the success modal
+        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+        successModal.show();
+
+        // Wait for 2000ms, then redirect
+        setTimeout(() => {
+            window.location.href = 'Home.html';
+        }, 2000); // 2 seconds delay before redirecting
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an issue with submitting your form.');
     });
 });
+
+
 
 function createJobCards(topjobs) {
     const jobCardsContainer = document.getElementById('job-cards');
