@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Feedback - Next Hire</title>
+  <link rel="stylesheet" href="nexthire.css">
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+.signup-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background: #218838;
+}
+.existing-account {
+    margin-top: 10px;
+    text-align: center;
+}
+.back-home {
+    margin-top: 10px;
+    text-align: center;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+}
+.back-home:hover {
+    background: #0056b3;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: vertical; 
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <img src="images/next-hire.png" alt="Next Hire Logo" class="logo">
+        <nav class="nav-links fade">
+            <button id="goToJobs" class="zoom">Jobs</button>
+            <button id="goToSignUp" class="zoom">Sign Up</button>
+            <button id="goToSignIn" class="zoom">Sign In</button>
+          </nav>
+      </div>
+      <h1>Accessibility Feedback</h1>
+    </header>
+
+    <section class="form-container">
+      <h2>We Value Your Feedback</h2>
+      <p>Please fill out the form below to provide feedback on our website's accessibility or to request assistance.</p>
+
+      <form id="accessibilityForm" class="feedback-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="feedback">Feedback / Request:</label>
+          <textarea id="feedback" name="feedback" rows="5" class="form-control" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Feedback</button>
+      </form>
+    </section>
+
+    <footer>
+      <nav class="footer-nav">
+        <a href="termsandconditions.html">Terms and Conditions</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="accessibility.html">Accessibility</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script src="nexthire.js"></script>
+</body>
+</html>

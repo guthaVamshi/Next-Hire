@@ -256,3 +256,18 @@ footer {
             -70px 90px 0 rgba(0, 0, 0, 0);
   }
 }
+.NoJobs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 74vh;
+  background-image: url(Images/nojobs.png);
+  width: 100%;
+  
+  background-size: contain;
+}
+.NoJobs p {
+  background-color: #93cfcf;
+  padding: 2rem;
+  border-radius: 5px;
+}

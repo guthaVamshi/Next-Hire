@@ -1,0 +1,121 @@
+/* General styling for Privacy Policy page */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    font-weight: 600;
+    color: #93cfcf; /* Light blue for heading */
+}
+
+h3 {
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px;
+    background-color: #f0f8ff;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f8ff;
+}
+
+.navbar .logo img {
+    max-width: 150px;
+}
+
+.navbar .nav-links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar .nav-links button {
+    padding: 10px 20px;
+    background-color: #93cfcf; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .nav-links button:hover {
+    background-color: #79b9b9; /* Darker shade on hover */
+}
+
+/* Content Container */
+.content {
+    width: 60%; /* Make content take 60% of width */
+}
+
+.content p {
+    line-height: 1.6;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    width: 35%; /* Make image container take 35% of width */
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #333; /* Dark border for the image */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    background-color: #f0f8ff;
+    padding: 20px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #007BFF; /* Default color for footer links */
+    font-weight: 400;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content, .image-container {
+        padding: 0;
+        width: 100%;
+    }
+
+    .image-container {
+        margin-top: 30px;
+    }
+}

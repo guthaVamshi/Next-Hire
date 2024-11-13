@@ -1,0 +1,92 @@
+/* General styling for User Agreement Policy page */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    font-weight: 600;
+    color: #93cfcf; /* Custom color for headings */
+    margin-top: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.content {
+    width: 60%; /* Adjusted width for content */
+}
+
+h3 {
+    color: #93cfcf; /* Custom color for subheadings */
+}
+
+p {
+    line-height: 1.6;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    width: 35%; /* Adjusted width for image */
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #333; /* Dark border for the image */
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f8ff;
+}
+
+.navbar .logo img {
+    max-width: 150px;
+}
+
+.navbar .nav-links {
+    display: flex;
+}
+
+.navbar .nav-links button {
+    padding: 10px 20px;
+    background-color: #93cfcf; /* Custom color for buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .nav-links button:hover {
+    background-color: #79b9b9; /* Darker shade on hover */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #f0f8ff;
+    padding: 20px;
+    margin-top: 20px;
+}
