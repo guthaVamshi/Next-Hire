@@ -6,6 +6,7 @@ let filteredJobs = []; // Initially set to all jobs (no filter)
 window.onload = function () {
   loadingSpinner.style.display = "flex";
   // Fetch job data on initial load
+  
   fetch("/api/getJobs")
     .then((response) => response.json())
     .then((data) => {
