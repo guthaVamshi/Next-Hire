@@ -247,3 +247,15 @@ button a{
 #ShowUserName i{
   margin-right: 0.5em;
 }
+#HeadingAfter::after{
+  content: "";                   /* Required for pseudo-elements */
+    display: block;                /* Ensures it behaves like a block */
+    width: 5%;                    /* 50% of the element's width */
+    height: 0.3rem;                   /* Thickness of the underline */
+    background-color: #93cfcf;
+    border-radius: 1em;       /* Color of the underline */
+    margin: 5px auto 0 auto; 
+}
+#HeadingAfter{
+  margin: 5rem;
+}
