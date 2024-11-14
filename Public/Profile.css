@@ -312,3 +312,12 @@ footer {
     color: darkblue;
     /* Change color on hover */
 }
+#ShowUsername::after{
+    content: "";                   /* Required for pseudo-elements */
+    display: block;                /* Ensures it behaves like a block */
+    width: 10%;                    /* 50% of the element's width */
+    height: 0.3rem;                   /* Thickness of the underline */
+    background-color: black;
+    border-radius: 1em;       /* Color of the underline */
+    margin: 2px auto 0 auto; 
+}
