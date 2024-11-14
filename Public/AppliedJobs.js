@@ -8,9 +8,21 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .then(response => response.json())
         .then(data => {
-            const apiResponse = data; // Assign the fetched data to apiResponse
-
             const jobCardsContainer = document.getElementById('job-cards'); // Get the job cards container
+            const nojobs = document.getElementById('nojobscontainer');
+            const apiResponse = data; // Assign the fetched data to apiResponse
+            console.log(data.length);
+           
+            if(data.length ==0){
+                nojobs.innerHTML='<h2 class="NoJobs"> <p>No jobs Applied</p></h2>';
+                setTimeout(() => {
+                    document.getElementById('loadingSpinner').style.display = 'none';
+                    document.getElementById('MainContent').style.display = "block";
+                }, 2000);
+            }else{
+
+            
+            
 
             // Clear previous content (optional)
             jobCardsContainer.innerHTML = '';
@@ -20,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <div class="card mb-3">
                         <div class="row no-gutters">
                             <div class="col-md-4 text-center" id="Companyimage">
-                                <img src="${job.Position__r.Company_Image__c }" class="card-img" alt="${job.Position__r.Name}">
+                                <img src="${job.Position__r.Company_Image__c  || 'N/A'}" class="card-img" alt="${job.Position__r.Name}">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -40,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     document.getElementById('MainContent').style.display = "block";
                 }, 2000);
             });
+        }
         })
         .catch(error => {
             console.error('Error fetching job data:', error); // Log any errors to the console

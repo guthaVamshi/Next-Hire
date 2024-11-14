@@ -35,6 +35,7 @@ async function fetchCandidateDetails() {
         document.getElementById('currentlyEmployed').checked = data[0].Currently_Emoloyed__c || false;
         document.getElementById('usCitizen').checked = data[0].US_Citizen__c || false;
         document.getElementById('visaRequired').checked = data[0].Visa_Required__c || false;
+        document.getElementById('ShowUsername').innerHTML += data[0].First_Name__c;
 
     } catch (error) {
         alert('Error fetching candidate details: ' + error.message);
@@ -49,6 +50,20 @@ async function fetchCandidateDetails() {
 
 // Function to update candidate details
 function updateCandidateDetails() {
+    // Clear any previous error messages
+    const errorFields = document.querySelectorAll('.error-message');
+    errorFields.forEach(field => field.remove());
+
+    // Helper function to show error
+    function showError(elementId, message) {
+        const element = document.getElementById(elementId);
+        const errorSpan = document.createElement('span');
+        errorSpan.className = 'error-message';
+        errorSpan.style.color = 'red';
+        errorSpan.innerText = ` ${message}`;
+        element.insertAdjacentElement('afterend', errorSpan);
+    }
+
     // Get form values
     const firstName = document.getElementById('firstName').value.trim();
     const lastName = document.getElementById('lastName').value.trim();
@@ -68,54 +83,58 @@ function updateCandidateDetails() {
     const visaRequired = document.getElementById('visaRequired').checked;
 
     // Validation checks
+    let isValid = true;
+
     if (!firstName) {
-        alert("First Name is required");
-        return;
+        showError('firstName', "First Name is required");
+        isValid = false;
     }
     if (!lastName) {
-        alert("Last Name is required");
-        return;
+        showError('lastName', "Last Name is required");
+        isValid = false;
     }
     if (!validateEmail(email)) {
-        alert("Invalid Email");
-        return;
+        showError('email', "Invalid Email");
+        isValid = false;
     }
     if (!validatePhone(phone)) {
-        alert("Invalid Phone number");
-        return;
+        showError('phone', "Invalid Phone number");
+        isValid = false;
     }
     if (!validatePhone(mobile)) {
-        alert("Invalid Mobile number");
-        return;
+        showError('mobile', "Invalid Mobile number");
+        isValid = false;
     }
     if (!street) {
-        alert("Street is required");
-        return;
+        showError('street', "Street is required");
+        isValid = false;
     }
     if (!city) {
-        alert("City is required");
-        return;
+        showError('city', "City is required");
+        isValid = false;
     }
     if (!state) {
-        alert("State is required");
-        return;
+        showError('state', "State is required");
+        isValid = false;
     }
     if (!country) {
-        alert("Country is required");
-        return;
+        showError('country', "Country is required");
+        isValid = false;
     }
     if (!postalCode || !/^\d{5}(-\d{4})?$/.test(postalCode)) {
-        alert("Invalid Postal Code");
-        return;
+        showError('postalCode', "Invalid Postal Code");
+        isValid = false;
     }
     if (!education) {
-        alert("Education level is required");
-        return;
+        showError('education', "Education level is required");
+        isValid = false;
     }
     if (!yearsOfExperience || isNaN(yearsOfExperience) || yearsOfExperience < 0) {
-        alert("Years of Experience must be a valid number");
-        return;
+        showError('yearsOfExperience', "Years of Experience must be a valid number");
+        isValid = false;
     }
+
+    if (!isValid) return; // Stop if there are validation errors
 
     // Prepare data to send to server
     const data = {
@@ -134,7 +153,7 @@ function updateCandidateDetails() {
         Currently_Emoloyed__c: currentlyEmployed,
         US_Citizen__c: usCitizen,
         Visa_Required__c: visaRequired,
-        Current_Employeer__c:currentEmployer
+        Current_Employeer__c: currentEmployer
     };
 
     // Send PATCH request to the server
@@ -156,9 +175,10 @@ function updateCandidateDetails() {
         }
     })
     .catch(error => {
-        alert('Error: ' + error.message);
+        console.error('Error:', error.message);
     });
 }
+
 
 // Validation function for email
 function validateEmail(email) {

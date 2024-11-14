@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="Home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://atugatran.github.io/FontAwesome6Pro/css/all.min.css" >
 </head>
 
 <body>
@@ -17,7 +17,7 @@
         <img src="images/next-hire.png" alt="Next Hire Logo" class="logo"></a>
         <nav class="nav-links">
             <button id="goToSignIn"><a href="Home.html">Home</a></button>
-            <button id="goToSignIn"><a href="Profile.html">Profile</a></button>
+            <button id="goToSignIn"><a href="Profile.html"><h4 id="ShowUserName"><i class="fa-duotone fa-solid fa-user"></i></h4></a></button>
             <button id="goToSignIn" style="margin: 0px 2em;"><a href="Signin.html">Logout</a></button>
         </nav>
     </div>
@@ -37,81 +37,79 @@
             </div>
         </section>
 
-        <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Fill Your Details to create your profile</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        
-                            <div class="mb-3">
-                                <label for="Firstname" class="form-label">First Name</label>
-                                <input type="text" class="form-control" name="Firstname" id="Firstname" placeholder="Enter first name">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel"><i class="fas fa-user-plus"></i> Fill Your Details to Create Your Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-4">
+                            <label for="Firstname" class="form-label"><i class="fas fa-user"></i> First Name</label>
+                            <input type="text" class="form-control" name="Firstname" id="Firstname" placeholder="Enter first name">
+                        </div>
+                        <div class="mb-4">
+                            <label for="Lastname" class="form-label"><i class="fas fa-user"></i> Last Name</label>
+                            <input type="text" class="form-control" name="Lastname" id="Lastname" placeholder="Enter last name">
+                        </div>
+                        <div class="mb-4">
+                            <label for="Phone" class="form-label"><i class="fas fa-phone"></i> Phone</label>
+                            <input type="text" class="form-control" name="Phone" id="Phone" placeholder="Enter phone number">
+                        </div>
+                        <div class="mb-4">
+                            <label for="Email" class="form-label"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" class="form-control" name="Email" id="Email" placeholder="Enter email address">
+                        </div>
+                        <div class="mb-4">
+                            <label for="Education" class="form-label"><i class="fas fa-graduation-cap"></i> Education</label>
+                            <select class="form-select" id="Education" aria-label="Select Education Level">
+                                <option value="BA/BS">BA/BS</option>
+                                <option value="HS Diploma">HS Diploma</option>
+                                <option value="MA/MS/MBA">MA/MS/MBA</option>
+                                <option value="PH.D">PH.D</option>
+                                <option value="Post.Doc">Post.Doc</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="CurrentEmployer" class="form-label"><i class="fas fa-building"></i> Current Employer</label>
+                            <input type="text" class="form-control" name="CurrentEmployer" id="CurrentEmployer" placeholder="Enter current employer">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label"><i class="fas fa-briefcase"></i> Currently Employed</label>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="CurrentlyEmployed" id="CurrentlyEmployed">
+                                <label for="CurrentlyEmployed" class="form-check-label">Yes</label>
                             </div>
-                            <div class="mb-3">
-                                <label for="Lastname" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" name="Lastname" id="Lastname" placeholder="Enter last name">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label"><i class="fas fa-flag"></i> US Citizen</label>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="USCitizen" id="USCitizen">
+                                <label for="USCitizen" class="form-check-label">Yes</label>
                             </div>
-                            <div class="mb-3">
-                                <label for="Phone" class="form-label">Phone</label>
-                                <input type="text" class="form-control" name="Phone" id="Phone" placeholder="Enter phone number">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label"><i class="fas fa-handshake"></i> Sponsorship Needed</label>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="SponsorshipNeeded" id="SponsorshipNeeded">
+                                <label for="SponsorshipNeeded" class="form-check-label">Yes</label>
                             </div>
-                            <div class="mb-3">
-                                <label for="Email" class="form-label">Email</label>
-                                <input type="email" class="form-control" name="Email" id="Email" placeholder="Enter email address">
-                            </div>
-                            <div class="mb-3">
-                                <label for="Education" id="Education">Education</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option value="BA/BS">BA/BS</option>
-                                    <option value="HS Diploma">HS Diploma</option>
-                                    <option value="	MA/MS/MBA">	MA/MS/MBA</option>
-                                    <option value="PH.D">PH.D</option>
-                                    <option value="Post.Doc">Post.Doc</option>
-                                  </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="CurrentEmployer" class="form-label">Current Employer</label>
-                                <input type="text" class="form-control" name="CurrentEmployer" id="CurrentEmployer" placeholder="Enter current employer">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Currently Employed</label>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" name="CurrentlyEmployed" id="CurrentlyEmployed">
-                                    <label for="CurrentlyEmployed" class="form-check-label">Yes</label>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">US Citizen</label>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" name="USCitizen" id="USCitizen">
-                                    <label for="USCitizen" class="form-check-label">Yes</label>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Sponsorship Needed</label>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" name="SponsorshipNeeded" id="SponsorshipNeeded">
-                                    <label for="SponsorshipNeeded" class="form-check-label">Yes</label>
-                                </div>
-                            </div>
-                            <button  id="CreateCandidate" class="btn btn-primary">Submit</button>
-                        
-                        
-                        
-                        
-                    </div>
-                    
+                        </div>
+                        <button type="submit" id="CreateCandidate" class="btn btn-primary w-100"><i class="fas fa-paper-plane"></i> Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
+    
+    
         <!-- Job Categories -->
         <section class="py-5 jobcatagories">
             <div class="container">
-                <h2 class="text-center mb-4">Job Categories</h2>
+                <h2 class="text-center" id="HeadingAfter">Job Categories</h2>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card mb-4">
@@ -153,7 +151,7 @@
 <!-- Featured Jobs Carousel -->
 <section class="py-5 bg-light Carousel">
     <div class="container">
-        <h2 class="text-center mb-4">Featured Jobs</h2>
+        <h2 class="text-center" id="HeadingAfter">Featured Jobs</h2>
         <div id="featuredJobsCarousel" class="carousel slide" data-bs-ride="carousel" style="width: 55%; margin: auto;">
             <!-- Indicators -->
             <div class="carousel-indicators">
@@ -219,13 +217,13 @@
     </div>
 </section>
 <div class="container mt-4">
-    <h2 class="text-center mb-4">Top Ten Jobs</h2>
+    <h2 class="text-center" id="HeadingAfter">Top Ten Jobs</h2>
     <div class="row" id="job-cards">
         <!-- Job cards will be inserted here -->
     </div>
 </div>
 <div class="container" >
-    <h2 class="text-center mb-4">Top Ten companies</h2>
+    <h2 class="text-center" id="HeadingAfter">Top Ten companies</h2>
     <div id="companyCarousel" class="carousel slide" data-ride="carousel" style="margin: 5em ">
         <div class="carousel-inner " id="carousel-items">
             <!-- Carousel items will be populated here by JavaScript -->
@@ -247,6 +245,20 @@
         </div>
     </div>
     
+</div>
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">Success!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Your details have been saved. You will be redirected to the home page shortly.
+            </div>
+        </div>
+    </div>
 </div>
 
         <footer>
