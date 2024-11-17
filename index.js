@@ -19,6 +19,7 @@ let LoginId = "";
 var LoginJosndata = "";
 var JobDetails = "";
 var CandidateId="";
+var UserEmail = "";
 const conn = new jsforce.Connection({
   loginUrl: SF_LOGINURL
 })
@@ -145,6 +146,57 @@ app.post("/api/Login", (req, res) => {
       );
     });
 });
+app.post("/api/ForgotPasswordOTP", (req, res) => {
+  
+  UserEmail = req.body.UserEmail;
+  axios({
+    method: "get",
+    url: `${instanceUrl}/services/apexrest/ForgetPassword/?UserEmail=${UserEmail}`,
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      const data = JSON.parse(response.data);
+      LoginJosndata = JSON.parse(response.data);
+      console.log(data);
+      res.json(data);
+    })
+    .catch((error) => {
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+    });
+});
+app.post("/api/UpdatePassword", (req, res) => {
+  
+  const OTP = req.body.OTP;
+  const NewPassword = req.body.NewPassword;
+  console.log(OTP,NewPassword,UserEmail);
+  axios({
+    method: "Post",
+    url: `${instanceUrl}/services/apexrest/ForgetPassword/?UserEmail=${UserEmail}&Otp=${OTP}&NewPassword=${NewPassword}`,
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      const data = JSON.parse(response.data);
+      LoginJosndata = JSON.parse(response.data);
+      console.log(data);
+      res.json(data);
+    })
+    .catch((error) => {
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+    });
+});
+
 app.get("/api/getjson", (req, res) => {
   console.log("Got hit");
   res.json(LoginJosndata);
@@ -403,6 +455,7 @@ app.patch('/candidate', (req, res) => {
           return res.status(500).send('Error updating data in Salesforce: ' + err.message);
       }
         console.log('Successfully updated:', result); // Log successful result
+        res.json(result);
       
   });
 });

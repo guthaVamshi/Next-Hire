@@ -84,7 +84,7 @@
                                 </label>
                                 <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx" required>
                               </div>
-                          
+                              <div class="error warning"></div>
                               <button type="submit">Submit Application</button>
                             </form>
                           </div>
@@ -104,7 +104,21 @@
         </div>
         
     </div>
-       
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content text-center p-4">
+            <div class="modal-body">
+                <i class="fa-regular fa-circle-check fa-beat-fade fa-2xl"></i>
+                <h5 class="modal-title mt-4" id="successModalLabel">Update Successful!</h5>
+                <p>Your details have been successfully updated!</p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
 <footer>
   <div class="footer-content">
       <div class="info-section">
