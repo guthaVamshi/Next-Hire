@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
       // Check if files are selected
       if (!file || !coverl) {
+        document.getElementsByClassName('error').innerHTML += '<p> Please select Both files';
         alert("Please select both files.");
         return;
       }
