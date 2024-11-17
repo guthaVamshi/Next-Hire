@@ -85,7 +85,7 @@
                                 <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx" required>
                               </div>
                               <div class="error warning"></div>
-                              <button type="submit">Submit Application</button>
+                              <button type="submit" style="background-color: #93cfcf;" >Submit Application</button>
                             </form>
                           </div>
                           
@@ -118,6 +118,22 @@
             </div>
         </div>
     </div>
+</div>
+<div class="modal fade" id="successApplicationModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content text-center p-4">
+        <div class="modal-body">
+            <h2><i class="fa-regular fa-circle-check fa-beat-fade fa-2xl" style="color: green;"></i></h2>
+            <h5 class="modal-title mt-4" id="successModalLabel">Application Send successfully !
+            </h5>
+            <p id="RecordIdOfApplication">You can save this Application Number for your refernce : </p>
+        </div>
+        <div class="modal-footer justify-content-center">
+            <button type="button" class="btn " onclick="SuccessModalClose()" style="background-color: #93cfcf;" data-dismiss="modal">OK</button>
+        </div>
+    </div>
+</div>
 </div>
 <footer>
   <div class="footer-content">
@@ -162,5 +178,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</script>
 </body>
 </html>
