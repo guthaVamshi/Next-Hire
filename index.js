@@ -481,9 +481,6 @@ function uploadFileToSalesforce(filePath, fileName, RecordId) {
           return reject(new Error('Error uploading file: ' + err.message));
         }
         resolve('File uploaded successfully: ' + res.id);
-        res.send({
-          "Success":"true"
-        });
       });
     });
   });

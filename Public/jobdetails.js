@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     document.getElementById('uploadForm').addEventListener('submit', function(e) {
       e.preventDefault();
-  
+
       const fileInput = document.getElementById('fileInput');
       const coverInput = document.getElementById('coverLetter');
       const file = fileInput.files[0]; 
@@ -137,7 +137,9 @@ document.addEventListener("DOMContentLoaded", function() {
       .then(response => response.json())
       .then(data => {
         if (data.success) {
-          alert('File and answers uploaded successfully: ' + data.message);
+        //  alert('File and answers uploaded successfully: ' + data.message);
+        document.getElementById('RecordIdOfApplication').innerHTML += data.jobApplicationId;
+        $('#successApplicationModal').modal('show');
         } else {
           alert('Error uploading file or answers: ' + data.message);
         }
