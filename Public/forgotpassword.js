@@ -39,16 +39,37 @@ function resetPassword() {
   const newPassword = document.getElementById("newPassword").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
 
-  if (!otp || !newPassword || !confirmPassword) {
-    alert("All fields are required.");
-    return;
+  document.getElementById("OtpError").innerText = '';
+  document.getElementById("PasswordError").innerText = '';
+  document.getElementById("ConfirmPasswordError").innerText = '';
+
+  let isValid = true;
+
+  // Validate OTP
+  if (!otp) {
+    document.getElementById("OtpError").innerText = 'Please Enter OTP';
+    isValid = false;
   }
 
-  if (newPassword !== confirmPassword) {
-    alert("Passwords do not match.");
-    return;
+  // Validate New Password
+  if (!newPassword) {
+    document.getElementById("PasswordError").innerText = 'Please Enter New Password';
+    isValid = false;
+  } else if (newPassword.length < 8 || newPassword.length > 20) {
+    document.getElementById("PasswordError").innerText =
+      'Password must be between 8 and 20 characters';
+    isValid = false;
   }
 
+  // Validate Confirm Password
+  if (!confirmPassword) {
+    document.getElementById("ConfirmPasswordError").innerText = 'Please Enter Confirm Password';
+    isValid = false;
+  } else if (newPassword !== confirmPassword) {
+    document.getElementById("ConfirmPasswordError").innerText = 'Passwords do not match';
+    isValid = false;
+  }
+  if (!isValid) return;
   // Make API call to update password
   fetch(`api/UpdatePassword`, {
     method: "POST",
