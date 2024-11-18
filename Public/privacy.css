@@ -52,7 +52,10 @@ h3 {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
+.header-content a{
+    text-decoration: none;
+    color: black;
+  }
 .navbar .nav-links button:hover {
     background-color: #79b9b9; /* Darker shade on hover */
 }
