@@ -299,13 +299,13 @@ nav.nav-links button {
 
 nav.nav-links button:hover {
   background-color: white;
-  color: #93cfcf;
+  color: #93cfcf !important;
   border-color: #93cfcf;
   border: 1px solid;
 }
 .header-content a{
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 footer {
