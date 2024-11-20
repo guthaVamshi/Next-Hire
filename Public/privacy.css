@@ -1,124 +1,365 @@
-/* General styling for Privacy Policy page */
+/* General styling for the body */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-}
-
-h2 {
-    font-weight: 600;
-    color: #93cfcf; /* Light blue for heading */
-}
-
-h3 {
-    color: #333;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 50px;
-    background-color: #f0f8ff;
-    margin-top: 60px;
-    margin-bottom: 60px;
-}
-
-/* Navbar Styling */
-.navbar {
+    background-color: #f8f9fa; /* Light background color */
+  }
+  
+  .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #f0f8ff;
-}
-
-.navbar .logo img {
-    max-width: 150px;
-}
-
-.navbar .nav-links {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.navbar .nav-links button {
-    padding: 10px 20px;
-    background-color: #93cfcf; /* Button color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: #fff;
+    border-bottom: 2px solid #93cfcf;
 }
 .header-content a{
     text-decoration: none;
     color: black;
   }
-.navbar .nav-links button:hover {
-    background-color: #79b9b9; /* Darker shade on hover */
+.logo {
+    width: 120px; /* Increase the width to make the logo slightly larger */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0px 2em;
 }
 
-/* Content Container */
-.content {
-    width: 60%; /* Make content take 60% of width */
-}
-
-.content p {
-    line-height: 1.6;
-    font-weight: 400;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.image-container {
-    width: 35%; /* Make image container take 35% of width */
-}
-
-.image-container img {
-    max-width: 100%;
-    height: auto;
-    border: 5px solid #333; /* Dark border for the image */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Footer Styling */
-footer {
-    text-align: center;
-    background-color: #f0f8ff;
-    padding: 20px;
-}
-
-.footer-nav {
+nav.nav-links {
     display: flex;
+    gap: 15px;
+}
+
+nav.nav-links button {
+    background-color: #93cfcf;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+nav.nav-links button:hover {
+    background-color: #7bbaba;
+}
+  /* Form styles */
+  .form-container {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    margin: 50px auto; /* Center the form */
+  }
+  
+  h1 {
+    color: #343a40;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  /* Input styles */
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Button styles */
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #93cfcf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #79b9b9;
+  }
+  
+  .back-to-signin {
+    margin-top: 15px;
+    background-color: #6c757d;
+  }
+  
+  .back-to-signin:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Success message */
+  .success-message {
+    color: #28a745; /* Green color for success */
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+    display: none; /* Initially hidden */
+  }
+  
+  /* Error messages */
+  .error-message {
+    color: #dc3545; /* Red for errors */
+    font-size: 14px;
+    margin-top: -5px;
+    display: none; /* Initially hidden */
+  }
+  
+  /* Optional: Responsive adjustments */
+  @media (max-width: 768px) {
+    .form-container {
+      margin: 20px auto;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* General styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+  
+  /* Form container */
+  .form-container {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    margin: 50px auto; /* Center the form */
+    transition: all 0.3s ease;
+  }
+  
+  h1 {
+    color: #343a40;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  /* Input styles */
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Button styles */
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #93cfcf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #79b9b9;
+  }
+  
+  .back-to-signin {
+    margin-top: 15px;
+    background-color: #6c757d;
+  }
+  
+  .back-to-signin:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Hidden sections */
+  .hidden {
+    display: none;
+  }
+  
+  /* Optional: Responsive adjustments */
+  @media (max-width: 768px) {
+    .form-container {
+      margin: 20px auto;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  
+footer {
+    margin-top: 0; /* Ensure no top margin */
+    padding: 40px 20px;
+    background-color: #fff; /* Background color for footer */
+    border-top: 1px solid #ccc; /* Optional border for separation */
+  }
+  
+  .footer-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space sections evenly */
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    max-width: 1200px; /* Optional: limit the width of the footer */
+    margin: 0 auto; /* Center the footer content */
+  }
+  
+  .footer-content > div {
+    flex: 1; /* Allow equal growth */
+    margin-right: 20px; /* Space between sections */
+  }
+  
+  .footer-content > div:last-child {
+    margin-right: 0; /* Remove margin from the last section */
+  }
+  
+  .footer-content h2 {
+    font-size: 1.5rem; /* Font size for headings */
+    color: #343a40; /* Dark text color */
+    margin: 10px 0; /* Margin for spacing */
+  }
+  
+  .footer-nav,
+  .social-nav {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    gap: 8px; /* Space between links */
+  }
+  
+  .footer-nav a,
+  .social-nav a {
+    color: #93cfcf; /* Color for footer links */
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem; /* Font size for links */
+  }
+  
+  .footer-nav a:hover,
+  .social-nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: darkblue; /* Change color on hover */
+  }
+  
+  .resume-section,
+  .job-recruiting-section {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    margin-bottom: 20px; /* Space between sections */
+  }
+  
+  .resume-section a,
+  .job-recruiting-section a {
+    margin-top: 10px; /* Space between links */
+    color: #93cfcf; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Transition effect */
+  }
+  
+  .resume-section a:hover,
+  .job-recruiting-section a:hover {
+    color: darkblue; /* Change color on hover */
+  }
+  
+  
+  /* Optional: Responsive adjustments */
+  @media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack sections vertically on small screens */
+    }
+  
+    .footer-content > div {
+        margin-right: 0; /* Remove margin for stacked sections */
+        margin-bottom: 20px; /* Add space below each section */
+    }
+    
+  }
+  .social-media-section {
+    display: flex;
+    flex-direction: column; /* Stack the heading and icons */
+    align-items: flex-start; /* Align to the start */
+  }
+  
+  .social-icons {
+    display: flex; /* Display icons inline */
+    gap: 10px; /* Space between icons */
+  }
+  
+  .social-icons a {
+    color: #93cfcf; /* Icon color */
+    font-size: 1.5rem; /* Size of the icons */
+    transition: color 0.3s; /* Transition effect */
+  }
+  
+  .social-icons a:hover {
+    color: darkblue; /* Change color on hover */
+  }
+
+  /* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     justify-content: center;
-    gap: 40px;
-}
-
-.footer-nav a {
-    text-decoration: none;
-    color: #007BFF; /* Default color for footer links */
-    font-weight: 400;
-}
-
-.footer-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .content, .image-container {
-        padding: 0;
-        width: 100%;
-    }
-
-    .image-container {
-        margin-top: 30px;
-    }
-}
+    align-items: center;
+    z-index: 1000; /* Ensure it's above all other elements */
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  .modal-content h2 {
+    color: #93cfcf; /* Primary color */
+    margin-bottom: 10px;
+  }
+  
+  .modal-content p {
+    color: #333; /* Dark text color */
+    margin-bottom: 20px;
+  }
+  
+  .modal-content button {
+    padding: 10px 20px;
+    background-color: #93cfcf;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .modal-content button:hover {
+    background-color: #79b9b9;
+  }
+  .modal-content h2 {
+    color: #e74c3c; /* Red color for error */
+  }
+  
+  .modal-content p {
+    color: #333;
+  }
+    
