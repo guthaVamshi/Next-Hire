@@ -28,7 +28,6 @@ conn.login(SF_USERNAME, SF_PASSWORD + SF_TOKEN, (err, UserInfo) => {
     console.error("Salesforce login error:", err);
     return;
   }
-  console.log("Salesforce User ID:", UserInfo.id);
   accessToken = conn.accessToken;
   instanceUrl = conn.instanceUrl;
 });
@@ -55,7 +54,6 @@ app.post("/api/Signup", (req, res) => {
     },
   })
     .then((response) => {
-      console.log("Response:", response.data);
       if (response.data == "Account Created") {
         res.redirect("/login.html");
       } else {
@@ -99,13 +97,13 @@ app.post("/api/CreateCandidate", (req, res) => {
     },
   })
     .then((response) => {
-      console.log("Response:", response.data);
+    
       const data = JSON.parse(response.data);
       LoginJosndata = JSON.parse(response.data);
       CandidateId = data.CandidateId;
-      console.log(data);
+  
       LoginId = data.Id;
-      console.log(LoginId);
+   
       res.json(data);
     })
     .catch((error) => {
@@ -119,7 +117,7 @@ app.use(express.urlencoded({ extended: true }));
 app.post("/api/Login", (req, res) => {
   
   const Username = req.body.Username;
-  console.log(Username);
+ 
   const Password = req.body.Password;
   axios({
     method: "get",
@@ -132,9 +130,9 @@ app.post("/api/Login", (req, res) => {
     .then((response) => {
       const data = JSON.parse(response.data);
       LoginJosndata = JSON.parse(response.data);
-      console.log(data);
+    
       LoginId = data.Id;
-      console.log(LoginId);
+    
       CandidateId = data.CandidateId;
       res.json(data);
     })
@@ -146,15 +144,15 @@ app.post("/api/Login", (req, res) => {
     });
 });
 app.get("/api/getjson", (req, res) => {
-  console.log("Got hit");
+ 
   res.json(LoginJosndata);
 });
 app.get("/api/getjobdetails", (req, res) => {
-  console.log("Got hit jobdetails");
+ 
   res.json(JobDetails);
 });
 app.get("/api/getJobs", (req, res) => {
-  console.log("Got Hit get jobs");
+ 
   axios({
     method: "get",
     url: `${instanceUrl}/services/apexrest/getJobs/`,
@@ -164,8 +162,7 @@ app.get("/api/getJobs", (req, res) => {
     },
   })
     .then((response) => {
-      console.log("get jobs");
-      console.log("Response:", response.data);
+     
       res.json(response.data);
     })
     .catch((error) => {
@@ -177,7 +174,7 @@ app.get("/api/getJobs", (req, res) => {
 });
 app.post("/api/getJobDetails",(req,res)=>{
   const {data} = req.body;
-  console.log(data);
+
   axios({
     method:"Post",
     url:`${instanceUrl}/services/apexrest/getJobDetails/`,
@@ -191,7 +188,7 @@ app.post("/api/getJobDetails",(req,res)=>{
   })
   .then((response) => {
     JobDetails = response.data;
-    console.log(JobDetails);
+    
     res.json(JobDetails);
   })
   .catch((error) => {
@@ -202,7 +199,7 @@ app.post("/api/getJobDetails",(req,res)=>{
   });
 });
 app.post("/api/AppliedJobs",(req,res)=>{
-  console.log('test');
+ 
   axios({
     method:"Post",
     url:`${instanceUrl}/services/apexrest/AppliedJobs`,
@@ -216,7 +213,7 @@ app.post("/api/AppliedJobs",(req,res)=>{
 })
     .then((response) =>{
       AppliedJobDetails = response.data;
-     console.log(AppliedJobDetails);
+    
      res.json(AppliedJobDetails);
     });
   });
