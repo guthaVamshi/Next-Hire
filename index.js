@@ -360,7 +360,8 @@ app.post('/upload', upload.fields([
     // Create the Job Application and include the answers
     let jobApplicationData = {
       Candidate__c: CandidateId,
-      Position__c: jobId
+      Position__c: jobId,
+      Status__c:'New'
     };
 
     Object.keys(answers).forEach(questionKey => {
