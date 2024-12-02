@@ -19,7 +19,7 @@ Welcome to **Next Hire**, a job hunting platform where you can discover and appl
 
 
 ## Environment Variables
-Create a .env file in main folder of the project
+Create a .env file in main folder of the project </br>
 To run this project, you will need to add the following environment variables to your .env file
 
 `SF_LOGINURL`
