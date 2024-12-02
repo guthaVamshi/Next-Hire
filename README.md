@@ -30,7 +30,7 @@ To run this project, you will need to add the following environment variables to
 
 `SF_TOKEN`
 
-##Documentation </br>
+## Documentation </br>
 ([/NextHireJobs Documentation/](https://github.com/guthaVamshi/Next-Hire/blob/main/NextHireJobs%20Doc.pdf)).
 
 ## Run Locally
